@@ -89,4 +89,4 @@ nnoremap <A-Up> :tabr<CR>
 nnoremap <A-Down> :tabl<CR>
 nnoremap <A-Left> :tabp<CR>
 nnoremap <A-Right> :tabn<CR>
-nnoremap <A-CR> :tabnew<CR>
+nnoremap <A-CR> :tab sp<CR>
