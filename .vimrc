@@ -85,8 +85,8 @@ filetype indent off   " Disable file-type-specific indentation
 
 " ----- MAPPING -----
 " Tabs navigation
-nnoremap <A-Up> :tabr<CR>
-nnoremap <A-Down> :tabl<CR>
-nnoremap <A-Left> :tabp<CR>
-nnoremap <A-Right> :tabn<CR>
+nnoremap <A-Up> :sp<CR>
+nnoremap <A-Down> :new<CR>
+nnoremap <A-Left> :vne<CR>
+nnoremap <A-Right> :vs<CR>
 nnoremap <A-CR> :tab sp<CR>
