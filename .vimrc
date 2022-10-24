@@ -113,3 +113,6 @@ nnoremap <A-Down> :new<CR>
 nnoremap <A-Left> :vne<CR>
 nnoremap <A-Right> :vs<CR>
 nnoremap <A-CR> :tab sp<CR>
+
+" Open all argument file in tabs
+tab all
