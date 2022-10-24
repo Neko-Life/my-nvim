@@ -9,7 +9,9 @@ lua require('coc-config')
 
 " BEGIN lightline.vim config
 " [CAUTION] copy the color scheme to nvim colors path
-" cp ~/.local/share/nvim/plugged/tender.vim/autoload/lightline/colorscheme/tender.vim /usr/share/nvim/runtime/colors
+" cp ~/.local/share/nvim/plugged/tender.vim/autoload/lightline/colorscheme/tender.vim \
+" ~/.local/share/nvim/plugged/tender.vim/autoload/lightline/colorscheme/tenderplus.vim \
+" /usr/share/nvim/runtime/colors
 " set lighline theme inside lightline config
 let g:lightline = { 'colorscheme': 'tender' }
 " END lightline.vim config
