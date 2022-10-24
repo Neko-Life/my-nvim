@@ -79,8 +79,19 @@ Plug 'maxmellon/vim-jsx-pretty'
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
 " You can revert the settings after the call like so:
+
+" 	[FOR INDENTATION PRACTICE]
 filetype indent off   " Disable file-type-specific indentation
+
 "   syntax off            " Disable syntax highlighting
+"
+"   sw = shiftwidth
+"   ts = tabstop
+"   et = expandtab
+"   For vscode compatibility you have to set both sw and ts to vscode space
+"   indentation setting
+"   example if vscode space indentation is 2 spaces, run the commands:
+"   :set sw=2 ts=2
 
 
 " ----- MAPPING -----
