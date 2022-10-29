@@ -116,3 +116,6 @@ nnoremap <A-CR> :tab sp<CR>
 
 " Open all argument file in tabs
 tab all
+
+" ejs syntax workaround
+au BufNewFile,BufRead *.ejs set filetype=html
