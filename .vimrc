@@ -119,3 +119,6 @@ tab all
 
 " ejs syntax workaround
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" no text wrapping
+set nowrap
