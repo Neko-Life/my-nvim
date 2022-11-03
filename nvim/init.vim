@@ -27,3 +27,6 @@ colorscheme habamax
 " END tender.vim config
 
 " Themes ===========================================
+
+" toggle nvim tree/side file explorer
+NvimTreeToggle
