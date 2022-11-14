@@ -2,6 +2,7 @@
 " set shiftwidth=8
 set number
 set relativenumber
+set cursorline
 set cursorlineopt=screenline
 set cursorcolumn
 " filetype indent plugin off
