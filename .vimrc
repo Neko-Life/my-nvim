@@ -1,6 +1,7 @@
 " ----- SETTINGS -----
 " set shiftwidth=8
 set number
+set relativenumber
 " filetype indent plugin off
 " syntax on
 
@@ -45,15 +46,17 @@ call plug#begin()
 " Plug '~/my-prototype-plugin'
 
 " ----- PLUGINS -----
-Plug 'vimsence/vimsence'
-Plug 'neovim/nvim-lspconfig'
-
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'onsails/lspkind.nvim'
+"  LSP --------------------
+" Plug 'vimsence/vimsence'
+" Plug 'neovim/nvim-lspconfig'
+" 
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'saadparwaiz1/cmp_luasnip'
+" Plug 'L3MON4D3/LuaSnip'
+" Plug 'onsails/lspkind.nvim'
+" LSP ---------------------
 
 " Plug 'LucHermitte/lh-vim-lib'
 " Plug 'LucHermitte/lh-style'
@@ -70,7 +73,9 @@ Plug 'wakatime/vim-wakatime'
 " Plug 'mfussenegger/nvim-lint'
 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python']
+" coc-snippets coc-yaml coc-rls
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python', 'coc-clangd']
+" run :CocCommand clangd.install https://github.com/clangd/coc-clangd
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -103,10 +108,10 @@ filetype indent off   " Disable file-type-specific indentation
 "   sw = shiftwidth
 "   ts = tabstop
 "   et = expandtab
-"   For vscode compatibility you have to set both sw and ts to vscode space
+"   For vscode compatibility you have to set sw to vscode spaces indentation
 "   indentation setting
 "   example if vscode space indentation is 2 spaces, run the commands:
-"   :set sw=2 ts=2
+"   :set sw=2 ts=8
 
 
 " ----- MAPPING -----
