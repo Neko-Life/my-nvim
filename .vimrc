@@ -50,7 +50,7 @@ call plug#begin()
 
 " ----- PLUGINS -----
 "  LSP --------------------
-" Plug 'vimsence/vimsence'
+Plug 'vimsence/vimsence'
 " Plug 'neovim/nvim-lspconfig'
 " 
 " Plug 'hrsh7th/cmp-nvim-lsp'
