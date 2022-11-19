@@ -133,6 +133,8 @@ tab all
 
 " ejs syntax workaround
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=8 " Set shiftwidth to 8 for cpp projects
+au BufNewFile,BufRead Makefile set sw=8
 
 " no text wrapping
 set nowrap
