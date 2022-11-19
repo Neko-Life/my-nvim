@@ -7,7 +7,7 @@ set cursorlineopt=screenline
 set scrolloff=14
 " filetype indent plugin off
 syntax on
-
+set sw=2 " 2 spaces shiftwidth for literally every single js project
 
 call plug#begin()
 " The default plugin directory will be as follows:
