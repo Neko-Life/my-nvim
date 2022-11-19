@@ -4,7 +4,7 @@ set number
 set relativenumber
 set cursorline
 set cursorlineopt=screenline
-set cursorcolumn
+set scrolloff=14
 " filetype indent plugin off
 " syntax on
 
@@ -79,20 +79,23 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-snippets coc-yaml coc-rls
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python', 'coc-clangd']
 " run :CocCommand clangd.install https://github.com/clangd/coc-clangd
-Plug 'yuezk/vim-js'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
+
+" JS, JSX and TSX syntax highlighting ///////////////////////////////////////
+" Plug 'yuezk/vim-js'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'maxmellon/vim-jsx-pretty'
+" JS, JSX and TSX syntax highlighting end ///////////////////////////////////
 
 " side file explorer
-Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+" Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 
 " Themes ===========================================
 
-Plug 'jacoborus/tender.vim'
+" Plug 'jacoborus/tender.vim'
 " More config for tender in ~/.config/nvim/init.vim
 
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 " More config for lightline in ~/.config/nvim/init.vim
 
 " Themes ===========================================

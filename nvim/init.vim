@@ -9,7 +9,7 @@ lua require('coc-config')
 
 " BEGIN lightline.vim config
 " set lighline theme inside lightline config
-let g:lightline = { 'colorscheme': 'tender' }
+" let g:lightline = { 'colorscheme': 'tender' }
 " END lightline.vim config
 
 " BEGIN tender.vim config
