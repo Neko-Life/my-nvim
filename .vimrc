@@ -6,7 +6,7 @@ set cursorline
 set cursorlineopt=screenline
 set scrolloff=14
 " filetype indent plugin off
-" syntax on
+syntax on
 
 
 call plug#begin()
@@ -49,8 +49,8 @@ call plug#begin()
 " Plug '~/my-prototype-plugin'
 
 " ----- PLUGINS -----
+Plug 'vimsence/vimsence' " Discord Presence
 "  LSP --------------------
-Plug 'vimsence/vimsence'
 " Plug 'neovim/nvim-lspconfig'
 " 
 " Plug 'hrsh7th/cmp-nvim-lsp'
@@ -81,13 +81,13 @@ let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', '
 " run :CocCommand clangd.install https://github.com/clangd/coc-clangd
 
 " JS, JSX and TSX syntax highlighting ///////////////////////////////////////
-" Plug 'yuezk/vim-js'
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'yuezk/vim-js'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 " JS, JSX and TSX syntax highlighting end ///////////////////////////////////
 
 " side file explorer
-" Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 
 " Themes ===========================================
