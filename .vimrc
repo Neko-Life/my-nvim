@@ -77,7 +77,7 @@ Plug 'wakatime/vim-wakatime'
 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-snippets coc-yaml coc-rls
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python', 'coc-clangd', '@yaegassy/coc-volar']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python', 'coc-clangd', '@yaegassy/coc-volar', 'coc-tailwindcss']
 " run :CocCommand clangd.install https://github.com/clangd/coc-clangd
 
 " JS, JSX and TSX syntax highlighting ///////////////////////////////////////
