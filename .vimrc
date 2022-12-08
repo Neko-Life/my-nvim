@@ -51,7 +51,7 @@ call plug#begin()
 " ----- PLUGINS -----
 Plug 'vimsence/vimsence' " Discord Presence
 "  LSP --------------------
-" Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
 " 
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
@@ -72,12 +72,15 @@ Plug 'vimsence/vimsence' " Discord Presence
 " Plug 'LucHermitte/alternate-lite'
 " Plug 'LucHermitte/lh-cpp'
 
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'wakatime/vim-wakatime'
 " Plug 'mfussenegger/nvim-lint'
 
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-snippets coc-yaml coc-rls
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python', 'coc-clangd', '@yaegassy/coc-volar', 'coc-tailwindcss']
+" let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python', 'coc-clangd', '@yaegassy/coc-volar', 'coc-tailwindcss']
+
 " run :CocCommand clangd.install https://github.com/clangd/coc-clangd
 
 " JS, JSX and TSX syntax highlighting ///////////////////////////////////////
@@ -110,7 +113,7 @@ call plug#end()
 " You can revert the settings after the call like so:
 
 " 	[FOR INDENTATION PRACTICE]
-filetype indent off   " Disable file-type-specific indentation
+" filetype indent off   " Disable file-type-specific indentation
 
 "   syntax off            " Disable syntax highlighting
 "

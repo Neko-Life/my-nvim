@@ -33,14 +33,14 @@ require("nvim-tree").setup({
 -- LSP ------------------------------------------------------------------
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
--- 
--- require('lspconfig').clangd.setup {
+
+require('lspconfig').clangd.setup {
 --     capabilities = capabilities,
--- }
--- 
--- -- require('lspconfig').quick_lint_js.setup {
--- --    capabilities = capabilities,
--- -- }
+}
+
+require('lspconfig').quick_lint_js.setup {
+--     capabilities = capabilities,
+}
 -- 
 -- -- luasnip setup
 -- local luasnip = require 'luasnip'

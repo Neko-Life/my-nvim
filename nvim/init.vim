@@ -3,7 +3,7 @@ let &packpath = &runtimepath
 source ~/.vimrc
 
 lua require('shasha')
-lua require('coc-config')
+" lua require('coc-config')
 
 " Themes ===========================================
 
