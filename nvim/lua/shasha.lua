@@ -80,11 +80,17 @@ require('lspconfig').clangd.setup {
   flags = lsp_flags,
 }
 
-require('lspconfig').quick_lint_js.setup {
+require('lspconfig').tsserver.setup {
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+-- require('lspconfig').quick_lint_js.setup {
+-- --     capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }
 
 -- Mappings ================
 
@@ -160,3 +166,24 @@ require('lspconfig').quick_lint_js.setup {
 --     require("lint").try_lint()
 --   end,
 -- })
+
+-- Setup web devicons
+-- require('nvim-web-devicons').setup {
+--  -- your personnal icons can go here (to override)
+--  -- you can specify color or cterm_color instead of specifying both of them
+--  -- DevIcon will be appended to `name`
+--  -- override = {
+--  --  zsh = {
+--  --    icon = "",
+--  --    color = "#428850",
+--  --    cterm_color = "65",
+--  --    name = "Zsh"
+--  --  }
+--  -- };
+--  -- globally enable different highlight colors per icon (default to true)
+--  -- if set to false all icons will have the default icon's color
+--  color_icons = true;
+--  -- globally enable default icons (default to false)
+--  -- will get overriden by `get_icons` option
+--  default = true;
+-- }
