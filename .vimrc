@@ -50,9 +50,11 @@ call plug#begin()
 
 " ----- PLUGINS -----
 Plug 'vimsence/vimsence' " Discord Presence
-"  LSP --------------------
-Plug 'neovim/nvim-lspconfig'
-" 
+Plug 'neovim/nvim-lspconfig' "  LSP --------------------
+Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
+
+Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
+
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
 " Plug 'hrsh7th/nvim-cmp'
@@ -141,6 +143,11 @@ tab all
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=8 " Set shiftwidth to 8 for cpp projects
 au BufNewFile,BufRead Makefile set sw=8
+
+" Define some more pairs not built-in by auto-pairs
+" 		.{js,ejs,html,tsx,jsx}
+au BufNewFile,BufRead * let b:AutoPairs = AutoPairsDefine({ '<' : '>' })
+let g:AutoPairsMultilineClose = 0
 
 " no text wrapping
 set nowrap
