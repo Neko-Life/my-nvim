@@ -71,7 +71,7 @@ end
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+ (150)
-  debounce_text_changes = 500,
+  debounce_text_changes = 1000, -- need 1 second of silence then start disturbing the silence with clangd
 }
 
 require('lspconfig').clangd.setup {
