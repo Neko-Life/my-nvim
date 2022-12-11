@@ -50,7 +50,8 @@ call plug#begin()
 
 " ----- PLUGINS -----
 Plug 'vimsence/vimsence' " Discord Presence
-Plug 'neovim/nvim-lspconfig' "  LSP --------------------
+Plug 'neovim/nvim-lspconfig' " LSP --------------------
+" Plug 'williamboman/mason.nvim' " lsp installer and manager
 Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
 
 Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
@@ -146,7 +147,7 @@ au BufNewFile,BufRead Makefile set sw=8
 
 " Define some more pairs not built-in by auto-pairs
 " 		.{js,ejs,html,tsx,jsx}
-au BufNewFile,BufRead * let b:AutoPairs = AutoPairsDefine({ '<' : '>' })
+au BufNewFile,BufRead *.{html,ejs,vue,js} let b:AutoPairs = AutoPairsDefine({ '<' : '>' })
 let g:AutoPairsMultilineClose = 0
 
 " no text wrapping

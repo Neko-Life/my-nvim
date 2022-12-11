@@ -86,6 +86,15 @@ require('lspconfig').tsserver.setup {
   flags = lsp_flags,
 }
 
+require('lspconfig').vuels.setup {
+--     capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+-- start mason
+-- require("mason").setup()
+
 -- require('lspconfig').quick_lint_js.setup {
 -- --     capabilities = capabilities,
 --   on_attach = on_attach,
