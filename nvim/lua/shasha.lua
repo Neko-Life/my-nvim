@@ -8,9 +8,6 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
 -- OR setup with some options
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
@@ -71,35 +68,38 @@ end
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+ (150)
-  debounce_text_changes = 1000, -- need 1 second of silence then start disturbing the silence with clangd
+  debounce_text_changes = 150, -- (let it default for now) need 2 second of silence then start disturbing the silence with clangd
 }
 
-require('lspconfig').clangd.setup {
+local coq = require("coq");
+local lspconf = require('lspconfig');
+
+lspconf.clangd.setup(coq.lsp_ensure_capabilities({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
-}
+}))
 
-require('lspconfig').tsserver.setup {
+lspconf.tsserver.setup(coq.lsp_ensure_capabilities({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
-}
+}))
 
-require('lspconfig').vuels.setup {
+lspconf.vuels.setup(coq.lsp_ensure_capabilities({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
-}
+}))
 
 -- start mason
 -- require("mason").setup()
 
--- require('lspconfig').quick_lint_js.setup {
--- --     capabilities = capabilities,
---   on_attach = on_attach,
---   flags = lsp_flags,
--- }
+lspconf.quick_lint_js.setup(coq.lsp_ensure_capabilities({
+--     capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}))
 
 -- Mappings ================
 

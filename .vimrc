@@ -54,6 +54,14 @@ Plug 'neovim/nvim-lspconfig' " LSP --------------------
 " Plug 'williamboman/mason.nvim' " lsp installer and manager
 Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
 
+" React Snippets
+" Plug 'SirVer/ultisnips'
+" Plug 'mlaursen/vim-react-snippets'
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" React Snippets
+
 Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
 
 " Plug 'hrsh7th/cmp-nvim-lsp'
@@ -139,6 +147,8 @@ nnoremap <A-CR> :tab sp<CR>
 
 " Open all argument file in tabs
 tab all
+" Autostart coq
+let g:coq_settings = { 'auto_start': v:true }
 
 " ejs syntax workaround
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -147,7 +157,7 @@ au BufNewFile,BufRead Makefile set sw=8
 
 " Define some more pairs not built-in by auto-pairs
 " 		.{js,ejs,html,tsx,jsx}
-au BufNewFile,BufRead *.{html,ejs,vue,js} let b:AutoPairs = AutoPairsDefine({ '<' : '>' })
+au BufNewFile,BufRead *.{html,ejs,vue,js,jsx,tsx} let b:AutoPairs = AutoPairsDefine({ '<' : '>' })
 let g:AutoPairsMultilineClose = 0
 
 " no text wrapping
