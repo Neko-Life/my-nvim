@@ -68,7 +68,7 @@ end
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+ (150)
-  debounce_text_changes = 150, -- (let it default for now) need 2 second of silence then start disturbing the silence with clangd
+  debounce_text_changes = 3000, -- need 3 second of silence then start disturbing the silence with clangd
 }
 
 local coq = require("coq");
