@@ -62,7 +62,7 @@ Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " React Snippets
 
-Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
+" Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
 
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
@@ -157,8 +157,8 @@ au BufNewFile,BufRead Makefile set sw=8
 
 " Define some more pairs not built-in by auto-pairs
 " 		.{js,ejs,html,tsx,jsx}
-au BufNewFile,BufRead *.{html,ejs,vue,js,jsx,tsx} let b:AutoPairs = AutoPairsDefine({ '<' : '>' })
-let g:AutoPairsMultilineClose = 0
+" au BufNewFile,BufRead *.{html,ejs,vue,js,jsx,tsx} let b:AutoPairs = AutoPairsDefine({ '<' : '>' })
+" let g:AutoPairsMultilineClose = 0
 
 " no text wrapping
 set nowrap
