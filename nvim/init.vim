@@ -29,4 +29,4 @@ colorscheme habamax
 " Themes ===========================================
 
 " toggle nvim tree/side file explorer
-NvimTreeToggle
+NvimTreeFocus
