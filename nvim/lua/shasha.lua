@@ -95,11 +95,11 @@ lspconf.vuels.setup(coq.lsp_ensure_capabilities({
 -- start mason
 -- require("mason").setup()
 
--- lspconf.quick_lint_js.setup(coq.lsp_ensure_capabilities({
--- --     capabilities = capabilities,
---   on_attach = on_attach,
---   flags = lsp_flags,
--- }))
+lspconf.quick_lint_js.setup(coq.lsp_ensure_capabilities({
+--     capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}))
 
 lspconf.cmake.setup(coq.lsp_ensure_capabilities({
 --     capabilities = capabilities,

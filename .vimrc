@@ -53,6 +53,7 @@ Plug 'vimsence/vimsence' " Discord Presence
 Plug 'neovim/nvim-lspconfig' " LSP --------------------
 " Plug 'williamboman/mason.nvim' " lsp installer and manager
 Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
+Plug 'jparise/vim-graphql' " GraphQL syntax highlighting
 
 " React Snippets
 " Plug 'SirVer/ultisnips'
