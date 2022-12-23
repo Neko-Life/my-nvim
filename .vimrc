@@ -54,6 +54,8 @@ Plug 'neovim/nvim-lspconfig' " LSP --------------------
 " Plug 'williamboman/mason.nvim' " lsp installer and manager
 Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
 Plug 'jparise/vim-graphql' " GraphQL syntax highlighting
+Plug 'p00f/clangd_extensions.nvim' " clangd ls extension features
+Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
 " React Snippets
 " Plug 'SirVer/ultisnips'
