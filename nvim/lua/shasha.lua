@@ -71,6 +71,19 @@ local lsp_flags = {
   debounce_text_changes = 1000, -- need 1 second of silence then start disturbing the silence with clangd
 }
 
+require("coq_3p") {
+  { src = "builtin/ada"     },
+  { src = "builtin/c"       },
+  { src = "builtin/clojure" },
+  { src = "builtin/css"     },
+  { src = "builtin/haskell" },
+  { src = "builtin/html"    },
+  { src = "builtin/js"      },
+  { src = "builtin/php"     },
+  { src = "builtin/syntax"  },
+  { src = "builtin/xml"     },
+}
+
 local coq = require("coq");
 local lspconf = require('lspconfig');
 

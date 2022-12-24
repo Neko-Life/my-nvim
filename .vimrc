@@ -88,6 +88,7 @@ Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'wakatime/vim-wakatime'
 " Plug 'mfussenegger/nvim-lint'
 
