@@ -65,7 +65,7 @@ Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " React Snippets
 
-" Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
+Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
 
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
