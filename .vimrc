@@ -102,6 +102,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'neoclide/vim-jsx-improve'
 " JS, JSX and TSX syntax highlighting end ///////////////////////////////////
 
 " side file explorer
