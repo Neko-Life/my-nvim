@@ -317,10 +317,15 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = "grm",
     },
   },
+  -- JoosepAlviste/nvim-ts-context-commentstring
+  context_commentstring = {
+    enable = true
+  },
+  -- windwp/nvim-ts-autotag 
+  autotag = {
+    enable = true,
+  }
 }
-
--- auto tags
-require('nvim-ts-autotag').setup()
 
 -- Mappings ================
 
