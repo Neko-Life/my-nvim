@@ -68,7 +68,7 @@ end
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+ (150)
-  debounce_text_changes = 1000, -- need 1 second of silence then start disturbing the silence with clangd
+  debounce_text_changes = 300, -- need 1 second of silence then start disturbing the silence with clangd
 }
 
 require("coq_3p") {
@@ -236,6 +236,10 @@ lspconf.emmet_ls.setup(coq.lsp_ensure_capabilities({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
+  filetypes = {
+    -- react js
+    "javascript", "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby" 
+  },
 }))
 
 --Enable (broadcasting) snippet capability for completion
@@ -247,6 +251,10 @@ lspconf.html.setup(
     capabilities = html_cap,
     on_attach = on_attach,
     flags = lsp_flags,
+--    filetypes = {
+--      -- react js
+--      "javascript", "html"
+--    },
   })
 )
 -- lspconf.tailwindcss.setup(coq.lsp_ensure_capabilities({
