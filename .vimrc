@@ -57,6 +57,9 @@ Plug 'jparise/vim-graphql' " GraphQL syntax highlighting
 Plug 'p00f/clangd_extensions.nvim' " clangd ls extension features
 Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
+" syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " React Snippets
 " Plug 'SirVer/ultisnips'
 " Plug 'mlaursen/vim-react-snippets'
@@ -167,3 +170,8 @@ au BufNewFile,BufRead Makefile set sw=8
 
 " no text wrapping
 set nowrap
+
+" folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable                     " Disable folding at startup.
