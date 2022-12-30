@@ -59,6 +59,8 @@ Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" auto tags
+Plug 'windwp/nvim-ts-autotag'
 
 " React Snippets
 " Plug 'SirVer/ultisnips'

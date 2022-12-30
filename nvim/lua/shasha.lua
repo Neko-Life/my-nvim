@@ -319,6 +319,9 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- auto tags
+require('nvim-ts-autotag').setup()
+
 -- Mappings ================
 
 -- -- luasnip setup
