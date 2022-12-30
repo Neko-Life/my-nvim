@@ -225,6 +225,30 @@ lspconf.cmake.setup(coq.lsp_ensure_capabilities({
   flags = lsp_flags,
 }))
 
+lspconf.cssls.setup(
+coq.lsp_ensure_capabilities({
+--     capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}))
+
+lspconf.emmet_ls.setup(coq.lsp_ensure_capabilities({
+--     capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}))
+
+--Enable (broadcasting) snippet capability for completion
+local html_cap = vim.lsp.protocol.make_client_capabilities()
+html_cap.textDocument.completion.completionItem.snippetSupport = true
+
+lspconf.html.setup(
+  coq.lsp_ensure_capabilities({
+    capabilities = html_cap,
+    on_attach = on_attach,
+    flags = lsp_flags,
+  })
+)
 -- lspconf.tailwindcss.setup(coq.lsp_ensure_capabilities({
 -- --     capabilities = capabilities,
 --   on_attach = on_attach,
@@ -382,3 +406,5 @@ require'nvim-treesitter.configs'.setup {
 --  -- will get overriden by `get_icons` option
 --  default = true;
 -- }
+
+-- vim: sw=2
