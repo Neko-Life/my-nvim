@@ -26,6 +26,9 @@ syntax enable
 colorscheme habamax
 " END tender.vim config
 
+" transparent bg
+hi Normal guibg=NONE ctermbg=NONE
+
 " Themes ===========================================
 
 " toggle nvim tree/side file explorer

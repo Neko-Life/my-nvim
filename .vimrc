@@ -52,8 +52,6 @@ call plug#begin()
 Plug 'vimsence/vimsence' " Discord Presence
 Plug 'neovim/nvim-lspconfig' " LSP --------------------
 " Plug 'williamboman/mason.nvim' " lsp installer and manager
-Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 Plug 'jparise/vim-graphql' " GraphQL syntax highlighting
 Plug 'p00f/clangd_extensions.nvim' " clangd ls extension features
@@ -61,8 +59,18 @@ Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
 " auto tags
 Plug 'windwp/nvim-ts-autotag'
+
+" more TS stuff
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'folke/twilight.nvim'
+" Plug 'theHamsta/nvim-treesitter-pairs'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'nvim-treesitter/playground'
 
 " React Snippets
 " Plug 'SirVer/ultisnips'
@@ -147,7 +155,6 @@ call plug#end()
 "   indentation setting
 "   example if vscode space indentation is 2 spaces, run the commands:
 "   :set sw=2 ts=8
-
 
 " ----- MAPPING -----
 " Tabs navigation
