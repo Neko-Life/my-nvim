@@ -49,7 +49,8 @@ call plug#begin()
 " Plug '~/my-prototype-plugin'
 
 " ----- PLUGINS -----
-Plug 'vimsence/vimsence' " Discord Presence
+" Plug 'vimsence/vimsence' " Discord Presence
+Plug 'andweeb/presence.nvim'
 Plug 'neovim/nvim-lspconfig' " LSP --------------------
 " Plug 'williamboman/mason.nvim' " lsp installer and manager
 
@@ -71,6 +72,9 @@ Plug 'folke/twilight.nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
+
+" debugger
+Plug 'puremourning/vimspector'
 
 " React Snippets
 " Plug 'SirVer/ultisnips'
@@ -187,3 +191,7 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable                     " Disable folding at startup.
 set et
+
+" debugger
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_base_dir='/home/neko-chan/.local/share/nvim/plugged/vimspector'
