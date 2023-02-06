@@ -175,7 +175,7 @@ let g:coq_settings = { 'auto_start': v:true }
 
 " ejs syntax workaround
 au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=8 " Set shiftwidth to 8 for cpp projects
+au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=4 " Set shiftwidth to 4 for cpp projects
 au BufNewFile,BufRead Makefile set sw=8
 
 " Define some more pairs not built-in by auto-pairs
