@@ -71,18 +71,18 @@ local lsp_flags = {
   debounce_text_changes = 300, -- need 1 second of silence then start disturbing the silence with clangd
 }
 
-require("coq_3p") {
-  { src = "builtin/ada"     },
-  { src = "builtin/c"       },
-  { src = "builtin/clojure" },
-  { src = "builtin/css"     },
-  { src = "builtin/haskell" },
-  { src = "builtin/html"    },
-  { src = "builtin/js"      },
-  { src = "builtin/php"     },
-  { src = "builtin/syntax"  },
-  { src = "builtin/xml"     },
-}
+-- require("coq_3p") {
+--   { src = "builtin/ada"     },
+--   { src = "builtin/c"       },
+--   { src = "builtin/clojure" },
+--   { src = "builtin/css"     },
+--   { src = "builtin/haskell" },
+--   { src = "builtin/html"    },
+--   { src = "builtin/js"      },
+--   { src = "builtin/php"     },
+--   { src = "builtin/syntax"  },
+--   { src = "builtin/xml"     },
+-- }
 
 local coq = require("coq");
 local lspconf = require('lspconfig');
@@ -257,6 +257,22 @@ lspconf.html.setup(
 --    },
   })
 )
+
+lspconf.java_language_server.setup(
+  coq.lsp_ensure_capabilities({
+    on_attach = on_attach,
+    cmd = { "java-language-server" },
+    flags = lsp_flags,
+  })
+)
+
+-- crashes
+-- lspconf.jdtls.setup(coq.lsp_ensure_capabilities({
+-- --     capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }))
+
 -- lspconf.tailwindcss.setup(coq.lsp_ensure_capabilities({
 -- --     capabilities = capabilities,
 --   on_attach = on_attach,
@@ -305,18 +321,18 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-  indent = {
-    enable = true
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn", -- set to `false` to disable one of the mappings
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
+  -- indent = {
+  --   enable = false
+  -- },
+  -- incremental_selection = {
+  --   enable = false,
+  --   keymaps = {
+  --     init_selection = "gnn", -- set to `false` to disable one of the mappings
+  --     node_incremental = "grn",
+  --     scope_incremental = "grc",
+  --     node_decremental = "grm",
+  --   },
+  -- },
   -- JoosepAlviste/nvim-ts-context-commentstring
   context_commentstring = {
     enable = true
@@ -326,30 +342,30 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
   -- nvim-treesitter/nvim-treesitter-refactor
-  refactor = {
-    highlight_definitions = {
-      enable = true,
-      -- Set to false if you have an `updatetime` of ~100.
-      clear_on_cursor_move = false,
-    },
-    highlight_current_scope = { enable = false },
-    smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "grr",
-      },
-    },
-    navigation = {
-      enable = true,
-      keymaps = {
-        goto_definition = "gnd",
-        list_definitions = "gnD",
-        list_definitions_toc = "gO",
-        goto_next_usage = "<a-*>",
-        goto_previous_usage = "<a-#>",
-      },
-    },
-  },
+  -- refactor = {
+  --   highlight_definitions = {
+  --     enable = false,
+  --     -- Set to false if you have an `updatetime` of ~100.
+  --     clear_on_cursor_move = false,
+  --   },
+  --   highlight_current_scope = { enable = false },
+  --   smart_rename = {
+  --     enable = false,
+  --     keymaps = {
+  --       smart_rename = "grr",
+  --     },
+  --   },
+  --   navigation = {
+  --     enable = false,
+  --     keymaps = {
+  --       goto_definition = "gnd",
+  --       list_definitions = "gnD",
+  --       list_definitions_toc = "gO",
+  --       goto_next_usage = "<a-*>",
+  --       goto_previous_usage = "<a-#>",
+  --     },
+  --   },
+  -- },
   -- p00f/nvim-ts-rainbow
   rainbow = {
     enable = true,
@@ -360,30 +376,30 @@ require'nvim-treesitter.configs'.setup {
     -- termcolors = {} -- table of colour name strings
   },
   -- nvim-treesitter/playground
-  playground = {
-    enable = true,
-    disable = {},
-    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-    persist_queries = false, -- Whether the query persists across vim sessions
-    keybindings = {
-      toggle_query_editor = 'o',
-      toggle_hl_groups = 'i',
-      toggle_injected_languages = 't',
-      toggle_anonymous_nodes = 'a',
-      toggle_language_display = 'I',
-      focus_language = 'f',
-      unfocus_language = 'F',
-      update = 'R',
-      goto_node = '<cr>',
-      show_help = '?',
-    },
-  },
-  query_linter = {
-    enable = true,
-    use_virtual_text = true,
-    -- "BufWrite", 
-    lint_events = {"CursorHold"},
-  },
+  -- playground = {
+  --   enable = false,
+  --   disable = {},
+  --   updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+  --   persist_queries = false, -- Whether the query persists across vim sessions
+  --   keybindings = {
+  --     toggle_query_editor = 'o',
+  --     toggle_hl_groups = 'i',
+  --     toggle_injected_languages = 't',
+  --     toggle_anonymous_nodes = 'a',
+  --     toggle_language_display = 'I',
+  --     focus_language = 'f',
+  --     unfocus_language = 'F',
+  --     update = 'R',
+  --     goto_node = '<cr>',
+  --     show_help = '?',
+  --   },
+  -- },
+  -- query_linter = {
+  --   enable = false,
+  --   use_virtual_text = true,
+  --   -- "BufWrite", 
+  --   lint_events = {"CursorHold"},
+  -- },
   -- theHamsta/nvim-treesitter-pairs
   -- pairs = {
   --   enable = true,
@@ -412,96 +428,96 @@ require("twilight").setup {
   -- refer to the configuration section below
 }
 -- nvim-treesitter/nvim-treesitter-context
-require'treesitter-context'.setup{
-  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-  trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-  min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
-  patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
-    -- For all filetypes
-    -- Note that setting an entry here replaces all other patterns for this entry.
-    -- By setting the 'default' entry below, you can control which nodes you want to
-    -- appear in the context window.
-    default = {
-      'class',
-      'function',
-      'method',
-      'for',
-      'while',
-      'if',
-      'switch',
-      'case',
-      'interface',
-      'struct',
-      'enum',
-    },
-    -- Patterns for specific filetypes
-    -- If a pattern is missing, *open a PR* so everyone can benefit.
-    tex = {
-      'chapter',
-      'section',
-      'subsection',
-      'subsubsection',
-    },
-    haskell = {
-      'adt'
-    },
-    rust = {
-      'impl_item',
+-- require'treesitter-context'.setup{
+--   enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
+--   max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+--   trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+--   min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+--   patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+--     -- For all filetypes
+--     -- Note that setting an entry here replaces all other patterns for this entry.
+--     -- By setting the 'default' entry below, you can control which nodes you want to
+--     -- appear in the context window.
+--     default = {
+--       'class',
+--       'function',
+--       'method',
+--       'for',
+--       'while',
+--       'if',
+--       'switch',
+--       'case',
+--       'interface',
+--       'struct',
+--       'enum',
+--     },
+--     -- Patterns for specific filetypes
+--     -- If a pattern is missing, *open a PR* so everyone can benefit.
+--     tex = {
+--       'chapter',
+--       'section',
+--       'subsection',
+--       'subsubsection',
+--     },
+--     haskell = {
+--       'adt'
+--     },
+--     rust = {
+--       'impl_item',
 
-    },
-    terraform = {
-      'block',
-      'object_elem',
-      'attribute',
-    },
-    scala = {
-      'object_definition',
-    },
-    vhdl = {
-      'process_statement',
-      'architecture_body',
-      'entity_declaration',
-    },
-    markdown = {
-      'section',
-    },
-    elixir = {
-      'anonymous_function',
-      'arguments',
-      'block',
-      'do_block',
-      'list',
-      'map',
-      'tuple',
-      'quoted_content',
-    },
-    json = {
-      'pair',
-    },
-    typescript = {
-      'export_statement',
-    },
-    yaml = {
-      'block_mapping_pair',
-    },
-  },
-  exact_patterns = {
-    -- Example for a specific filetype with Lua patterns
-    -- Treat patterns.rust as a Lua pattern (i.e "^impl_item$" will
-    -- exactly match "impl_item" only)
-    -- rust = true,
-  },
+--     },
+--     terraform = {
+--       'block',
+--       'object_elem',
+--       'attribute',
+--     },
+--     scala = {
+--       'object_definition',
+--     },
+--     vhdl = {
+--       'process_statement',
+--       'architecture_body',
+--       'entity_declaration',
+--     },
+--     markdown = {
+--       'section',
+--     },
+--     elixir = {
+--       'anonymous_function',
+--       'arguments',
+--       'block',
+--       'do_block',
+--       'list',
+--       'map',
+--       'tuple',
+--       'quoted_content',
+--     },
+--     json = {
+--       'pair',
+--     },
+--     typescript = {
+--       'export_statement',
+--     },
+--     yaml = {
+--       'block_mapping_pair',
+--     },
+--   },
+--   exact_patterns = {
+--     -- Example for a specific filetype with Lua patterns
+--     -- Treat patterns.rust as a Lua pattern (i.e "^impl_item$" will
+--     -- exactly match "impl_item" only)
+--     -- rust = true,
+--   },
 
-  -- [!] The options below are exposed but shouldn't require your attention,
-  --     you can safely ignore them.
+--   -- [!] The options below are exposed but shouldn't require your attention,
+--   --     you can safely ignore them.
 
-  zindex = 20, -- The Z-index of the context window
-  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
-  -- Separator between context and content. Should be a single character string, like '-'.
-  -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
-  separator = nil,
-}
+--   zindex = 20, -- The Z-index of the context window
+--   mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+--   -- Separator between context and content. Should be a single character string, like '-'.
+--   -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+--   separator = nil,
+-- }
 
 -- Mappings ================
 

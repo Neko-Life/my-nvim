@@ -148,7 +148,7 @@ call plug#end()
 " You can revert the settings after the call like so:
 
 " 	[FOR INDENTATION PRACTICE]
-" filetype indent off   " Disable file-type-specific indentation
+filetype indent off   " Disable file-type-specific indentation
 
 "   syntax off            " Disable syntax highlighting
 "
