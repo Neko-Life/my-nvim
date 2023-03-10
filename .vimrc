@@ -111,6 +111,10 @@ Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'wakatime/vim-wakatime'
 " Plug 'mfussenegger/nvim-lint'
 
+" formatter
+" Plug 'dense-analysis/ale' " very slow in NFS
+Plug 'sbdchd/neoformat' " npm -g install --save-dev prettier
+
 " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-snippets coc-yaml coc-rls
 " let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python', 'coc-clangd', '@yaegassy/coc-volar', 'coc-tailwindcss']
@@ -195,3 +199,17 @@ set et
 " debugger
 let g:vimspector_enable_mappings = 'HUMAN'
 let g:vimspector_base_dir='/home/neko-chan/.local/share/nvim/plugged/vimspector'
+
+" neoformat: try use node formatter first
+let g:neoformat_try_node_exe = 1
+
+autocmd BufWritePre *.{js,jsx,ts,tsx} Neoformat
+
+" ale: formatter
+" let g:ale_fixers = {
+"  \ 'javascript': ['eslint']
+"  \ }
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
+" let g:ale_fix_on_save = 1
+" let g:ale_virtualenv_dir_names = []
