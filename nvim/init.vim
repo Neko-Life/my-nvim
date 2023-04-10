@@ -29,6 +29,8 @@ colorscheme habamax
 " transparent bg
 hi Normal guibg=NONE ctermbg=NONE
 
+set mouse=
+
 " Themes ===========================================
 
 " toggle nvim tree/side file explorer

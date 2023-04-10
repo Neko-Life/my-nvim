@@ -204,11 +204,17 @@ require("typescript").setup({
   }),  -- pass options to lspconfig's setup method
 })
 
-lspconf.vuels.setup(coq.lsp_ensure_capabilities({
+lspconf.volar.setup(coq.lsp_ensure_capabilities({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
+
+-- lspconf.vuels.setup(coq.lsp_ensure_capabilities({
+-- --     capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }))
 
 -- start mason
 -- require("mason").setup()
