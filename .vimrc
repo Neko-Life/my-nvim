@@ -179,8 +179,6 @@ let g:coq_settings = { 'auto_start': v:true }
 
 " ejs syntax workaround
 au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=4 " Set shiftwidth to 4 for cpp projects
-au BufNewFile,BufRead Makefile set sw=8
 
 " Define some more pairs not built-in by auto-pairs
 " 		.{js,ejs,html,tsx,jsx}
@@ -204,6 +202,11 @@ let g:vimspector_base_dir='/home/neko-chan/.local/share/nvim/plugged/vimspector'
 let g:neoformat_try_node_exe = 1
 
 autocmd BufWritePre *.{js,jsx,ts,tsx} Neoformat
+
+" shiftwidth and tabstop configs
+au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=4 ts=4 " Set shiftwidth to 4 for cpp projects
+au BufNewFile,BufRead Makefile set sw=8 ts=8
+au BufNewFile,BufRead *.php set sw=2 ts=2 noet
 
 " ale: formatter
 " let g:ale_fixers = {

@@ -272,6 +272,13 @@ lspconf.java_language_server.setup(
   })
 )
 
+lspconf.phpactor.setup(
+  coq.lsp_ensure_capabilities({
+    on_attach = on_attach,
+    flags = lsp_flags,
+  })
+)
+
 -- crashes
 -- lspconf.jdtls.setup(coq.lsp_ensure_capabilities({
 -- --     capabilities = capabilities,
