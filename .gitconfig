@@ -3,4 +3,4 @@
 [merge]
 	tool = nvim
 [mergetool "nvim"]
-	cmd = nvim -d $MERGED $REMOTE $LOCAL $BASE
+	cmd = nvim -d $MERGED $REMOTE $LOCAL
