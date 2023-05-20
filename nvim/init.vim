@@ -34,4 +34,4 @@ set mouse=
 " Themes ===========================================
 
 " toggle nvim tree/side file explorer
-NvimTreeFocus
+" NvimTreeFocus

@@ -173,7 +173,7 @@ nnoremap <A-Right> :vs<CR>
 nnoremap <A-CR> :tab sp<CR>
 
 " Open all argument file in tabs
-tab all
+" tab all
 " Autostart coq
 let g:coq_settings = { 'auto_start': v:true }
 
@@ -201,7 +201,7 @@ let g:vimspector_base_dir='/home/neko-chan/.local/share/nvim/plugged/vimspector'
 " neoformat: try use node formatter first
 let g:neoformat_try_node_exe = 1
 
-" autocmd BufWritePre *.{js,jsx,ts,tsx} Neoformat
+autocmd BufWritePre *.{jsx,ts,tsx} Neoformat
 
 " shiftwidth and tabstop configs
 au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=4 ts=4 " Set shiftwidth to 4 for cpp projects

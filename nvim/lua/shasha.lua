@@ -358,7 +358,7 @@ lspconf.html.setup(
 lspconf.java_language_server.setup(
   coq.lsp_ensure_capabilities({
     on_attach = on_attach,
-    cmd = { "java-language-server" },
+    cmd = { "/home/neko-chan/repos/java-language-server/dist/launch_linux.sh" },
     flags = lsp_flags,
   })
 )
