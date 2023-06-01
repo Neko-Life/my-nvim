@@ -171,14 +171,12 @@ nnoremap <A-Down> :new<CR>
 nnoremap <A-Left> :vne<CR>
 nnoremap <A-Right> :vs<CR>
 nnoremap <A-CR> :tab sp<CR>
+nnoremap <A-Space> :tabnew<CR>
 
 " Open all argument file in tabs
 " tab all
 " Autostart coq
 let g:coq_settings = { 'auto_start': v:true }
-
-" ejs syntax workaround
-au BufNewFile,BufRead *.ejs set filetype=html
 
 " Define some more pairs not built-in by auto-pairs
 " 		.{js,ejs,html,tsx,jsx}
@@ -189,9 +187,9 @@ au BufNewFile,BufRead *.ejs set filetype=html
 set nowrap
 
 " folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-set nofoldenable                     " Disable folding at startup.
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
+" set nofoldenable                     " Disable folding at startup.
 set et
 
 " debugger
@@ -201,7 +199,11 @@ let g:vimspector_base_dir='/home/neko-chan/.local/share/nvim/plugged/vimspector'
 " neoformat: try use node formatter first
 let g:neoformat_try_node_exe = 1
 
-autocmd BufWritePre *.{jsx,ts,tsx} Neoformat
+" ejs syntax workaround
+au BufNewFile,BufRead *.ejs set filetype=html
+
+" format files on save
+au BufWritePre *.{jsx,ts,tsx} Neoformat
 
 " shiftwidth and tabstop configs
 au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=4 ts=4 " Set shiftwidth to 4 for cpp projects

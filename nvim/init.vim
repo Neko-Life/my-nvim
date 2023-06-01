@@ -27,7 +27,22 @@ colorscheme habamax
 " END tender.vim config
 
 " transparent bg
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE
+
+" default scheme color override
+au ColorScheme default hi Pmenu guibg=#262626
+au ColorScheme default hi CursorLine guibg=#101010
+au ColorScheme default hi CursorColumn guibg=#101010
+au ColorScheme default hi Folded guibg=#303030
+au ColorScheme default hi TabLine gui=NONE guibg=#303030
+au ColorScheme default hi TabLineFill gui=bold guibg=#303030
+au ColorScheme default hi NonText guifg=#585858
+au ColorScheme default hi StatusLine gui=bold guibg=#303030
+au ColorScheme default hi Visual guibg=#404040
+au ColorScheme default hi PmenuSel guibg=#404040
+au ColorScheme default hi MatchParen guibg=#404040
+au ColorScheme default hi Directory gui=bold guifg=#87afaf
+au ColorScheme default hi LineNr guifg=#585858 gui=bold
 
 set mouse=
 
