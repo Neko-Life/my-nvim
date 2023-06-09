@@ -98,7 +98,7 @@ local function nvim_tree_on_attach(bufnr)
 
 end
 
--- OR setup with some options
+-- setup with some options
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
@@ -403,7 +403,7 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     -- `false` will disable the whole extension
-    enable = true,
+    enable = false, -- true,
 
     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
@@ -439,7 +439,7 @@ require'nvim-treesitter.configs'.setup {
   -- },
   -- JoosepAlviste/nvim-ts-context-commentstring
   context_commentstring = {
-    enable = true
+    enable = false
   },
   -- windwp/nvim-ts-autotag 
   autotag = {
@@ -472,7 +472,7 @@ require'nvim-treesitter.configs'.setup {
   -- },
   -- p00f/nvim-ts-rainbow
   rainbow = {
-    enable = true,
+    enable = false,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
@@ -526,11 +526,11 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- folke/twilight.nvim
-require("twilight").setup {
+-- require("twilight").setup {
   -- your configuration comes here
   -- or leave it empty to use the default settings
   -- refer to the configuration section below
-}
+-- }
 -- nvim-treesitter/nvim-treesitter-context
 -- require'treesitter-context'.setup{
 --   enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -744,5 +744,3 @@ require("presence"):setup({
     workspace_text      = "Working on %s",            -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
     line_number_text    = "Line %s out of %s",        -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
 })
-
--- vim: sw=2
