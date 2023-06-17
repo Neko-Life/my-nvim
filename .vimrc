@@ -135,6 +135,9 @@ Plug 'nvim-tree/nvim-tree.lua'
 " Vue highlighting
 Plug 'posva/vim-vue'
 
+" git blame
+Plug 'APZelos/blamer.nvim'
+
 " Themes ===========================================
 
 " Plug 'jacoborus/tender.vim'
@@ -177,6 +180,13 @@ nnoremap <A-Space> :tabnew<CR>
 " tab all
 " Autostart coq
 let g:coq_settings = { 'auto_start': v:true }
+
+" enable git blame
+let g:blamer_enabled = 1
+let g:blamer_show_in_insert_modes = 0 " disable in insert mode
+let g:blamer_template = '<author>, <committer>, <committer-time>, [<commit-short>] • <summary>' " info template
+let g:blamer_relative_time = 1 " relative time
+let g:blamer_delay = 3000 " delay before showing blame
 
 " Define some more pairs not built-in by auto-pairs
 " 		.{js,ejs,html,tsx,jsx}
