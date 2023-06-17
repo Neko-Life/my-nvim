@@ -188,6 +188,7 @@ let g:coq_settings = { 'auto_start': v:true }
 let g:blamer_enabled = 1
 let g:blamer_show_in_insert_modes = 0 " disable in insert mode
 let g:blamer_template = '@<author>, @<committer>, <committer-time>, [<commit-short>] • <summary>' " info template
+let g:blamer_date_format = '%Y%m%d %H:%M:%S'
 " let g:blamer_relative_time = 1 " relative time
 let g:blamer_delay = 3000 " delay before showing blame
 
