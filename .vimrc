@@ -135,6 +135,9 @@ Plug 'nvim-tree/nvim-tree.lua'
 " Vue highlighting
 Plug 'posva/vim-vue'
 
+" git gutter
+Plug 'airblade/vim-gitgutter'
+
 " git blame
 Plug 'APZelos/blamer.nvim'
 
@@ -184,8 +187,8 @@ let g:coq_settings = { 'auto_start': v:true }
 " enable git blame
 let g:blamer_enabled = 1
 let g:blamer_show_in_insert_modes = 0 " disable in insert mode
-let g:blamer_template = '<author>, <committer>, <committer-time>, [<commit-short>] • <summary>' " info template
-let g:blamer_relative_time = 1 " relative time
+let g:blamer_template = '@<author>, @<committer>, <committer-time>, [<commit-short>] • <summary>' " info template
+" let g:blamer_relative_time = 1 " relative time
 let g:blamer_delay = 3000 " delay before showing blame
 
 " Define some more pairs not built-in by auto-pairs
@@ -195,6 +198,16 @@ let g:blamer_delay = 3000 " delay before showing blame
 
 " no text wrapping
 set nowrap
+
+" gitgutter
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
+" gitgutter update time, this setting also used by swap save crash recovery
+set updatetime=300
 
 " folding
 " set foldmethod=expr
@@ -219,6 +232,9 @@ au BufWritePre *.{jsx,ts,tsx} Neoformat
 au BufNewFile,BufRead *.{cpp,c,hpp,h} set sw=4 ts=4 " Set shiftwidth to 4 for cpp projects
 au BufNewFile,BufRead Makefile set sw=8 ts=8
 au BufNewFile,BufRead *.php set sw=2 ts=2 noet
+
+" enable gitgutter linenr highlight
+au BufNewFile,BufRead * GitGutterLineNrHighlightsEnable
 
 " ale: formatter
 " let g:ale_fixers = {
