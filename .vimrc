@@ -141,6 +141,12 @@ Plug 'airblade/vim-gitgutter'
 " git blame
 Plug 'APZelos/blamer.nvim'
 
+" markdown viewer
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+" git rev viewer
+Plug 'sindrets/diffview.nvim'
+
 " Themes ===========================================
 
 " Plug 'jacoborus/tender.vim'
