@@ -60,21 +60,21 @@ Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+" Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
 " auto tags
 Plug 'windwp/nvim-ts-autotag'
 
 " more TS stuff
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'folke/twilight.nvim'
+" Plug 'nvim-treesitter/nvim-treesitter-refactor'
+" Plug 'folke/twilight.nvim'
 " Plug 'theHamsta/nvim-treesitter-pairs'
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'nvim-treesitter/playground'
+" Plug 'p00f/nvim-ts-rainbow'
+" Plug 'nvim-treesitter/nvim-treesitter-context'
+" Plug 'nvim-treesitter/playground'
 
 " debugger
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 " React Snippets
 " Plug 'SirVer/ultisnips'
