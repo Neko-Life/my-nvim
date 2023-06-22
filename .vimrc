@@ -147,6 +147,16 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " git rev viewer
 Plug 'sindrets/diffview.nvim'
 
+" brackets and `.` wrapper
+" add: ys{textobject}{char}
+"       ysa{)
+" remove: ds{char}
+"       ds{
+" modify: cs{char}{newchar}
+"       cs{(
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
 " Themes ===========================================
 
 " Plug 'jacoborus/tender.vim'
