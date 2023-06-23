@@ -107,7 +107,7 @@ Plug 'windwp/nvim-ts-autotag'
 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'wakatime/vim-wakatime'
 " Plug 'mfussenegger/nvim-lint'
 
@@ -122,10 +122,10 @@ Plug 'sbdchd/neoformat' " npm -g install --save-dev prettier
 " run :CocCommand clangd.install https://github.com/clangd/coc-clangd
 
 " JS, JSX and TSX syntax highlighting ///////////////////////////////////////
-Plug 'yuezk/vim-js'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'neoclide/vim-jsx-improve'
+" Plug 'yuezk/vim-js'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'neoclide/vim-jsx-improve'
 " JS, JSX and TSX syntax highlighting end ///////////////////////////////////
 
 " side file explorer
@@ -133,7 +133,7 @@ Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 
 " Vue highlighting
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 
 " git gutter
 Plug 'airblade/vim-gitgutter'
@@ -150,6 +150,7 @@ Plug 'sindrets/diffview.nvim'
 " brackets and `.` wrapper
 " add: ys{textobject}{char}
 "       ysa{)
+"       ysiw"
 " remove: ds{char}
 "       ds{
 " modify: cs{char}{newchar}
