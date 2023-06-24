@@ -158,6 +158,10 @@ Plug 'sindrets/diffview.nvim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
+" boost production with unimpaired
+"
+Plug 'tpope/vim-unimpaired'
+
 " Themes ===========================================
 
 " Plug 'jacoborus/tender.vim'
