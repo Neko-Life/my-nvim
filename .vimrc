@@ -129,8 +129,8 @@ Plug 'sbdchd/neoformat' " npm -g install --save-dev prettier
 " JS, JSX and TSX syntax highlighting end ///////////////////////////////////
 
 " side file explorer
-Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
-Plug 'nvim-tree/nvim-tree.lua'
+" Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+" Plug 'nvim-tree/nvim-tree.lua'
 
 " Vue highlighting
 " Plug 'posva/vim-vue'
@@ -212,6 +212,10 @@ let g:blamer_template = '@<author>, @<committer>, <committer-time>, [<commit-sho
 let g:blamer_date_format = '%Y%m%d %H:%M:%S'
 " let g:blamer_relative_time = 1 " relative time
 let g:blamer_delay = 3000 " delay before showing blame
+
+" netrw settings
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 
 " Define some more pairs not built-in by auto-pairs
 " 		.{js,ejs,html,tsx,jsx}
