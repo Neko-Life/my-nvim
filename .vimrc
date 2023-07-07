@@ -5,7 +5,7 @@ set relativenumber
 set cursorline
 set cursorlineopt=screenline
 set scrolloff=14
-" filetype indent plugin off
+filetype indent plugin on
 syntax on
 set sw=2 " 2 spaces shiftwidth for literally every single js project
 
@@ -179,7 +179,7 @@ call plug#end()
 " You can revert the settings after the call like so:
 
 " 	[FOR INDENTATION PRACTICE]
-filetype indent off   " Disable file-type-specific indentation
+" filetype indent off   " Disable file-type-specific indentation
 
 "   syntax off            " Disable syntax highlighting
 "
@@ -193,12 +193,12 @@ filetype indent off   " Disable file-type-specific indentation
 
 " ----- MAPPING -----
 " Tabs navigation
-nnoremap <A-Up> :sp<CR>
-nnoremap <A-Down> :new<CR>
-nnoremap <A-Left> :vne<CR>
-nnoremap <A-Right> :vs<CR>
-nnoremap <A-CR> :tab sp<CR>
-nnoremap <A-Space> :tabnew<CR>
+" nnoremap <A-Up> :sp<CR>
+" nnoremap <A-Down> :new<CR>
+" nnoremap <A-Left> :vne<CR>
+" nnoremap <A-Right> :vs<CR>
+" nnoremap <A-CR> :tab sp<CR>
+" nnoremap <A-Space> :tabnew<CR>
 
 " Open all argument file in tabs
 " tab all
