@@ -162,6 +162,13 @@ Plug 'tpope/vim-repeat'
 "
 Plug 'tpope/vim-unimpaired'
 
+" fast navigation with telescope
+" deps command:
+" pacman -S ripgrep
+" pacman -S fd
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+
 " Themes ===========================================
 
 " Plug 'jacoborus/tender.vim'
@@ -199,6 +206,12 @@ call plug#end()
 " nnoremap <A-Right> :vs<CR>
 " nnoremap <A-CR> :tab sp<CR>
 " nnoremap <A-Space> :tabnew<CR>
+
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Open all argument file in tabs
 " tab all
