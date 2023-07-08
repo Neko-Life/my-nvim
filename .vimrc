@@ -129,7 +129,7 @@ Plug 'sbdchd/neoformat' " npm -g install --save-dev prettier
 " JS, JSX and TSX syntax highlighting end ///////////////////////////////////
 
 " side file explorer
-" Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons. Telescope also uses this
 " Plug 'nvim-tree/nvim-tree.lua'
 
 " Vue highlighting
@@ -208,8 +208,8 @@ call plug#end()
 " nnoremap <A-Space> :tabnew<CR>
 
 " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep hidden=true<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
