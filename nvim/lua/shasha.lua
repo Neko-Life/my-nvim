@@ -119,6 +119,23 @@ end
 --   on_attach = nvim_tree_on_attach,
 -- })
 
+-- Telescope
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = {".git", "*-lock.json", ".cache", "*.lock"}
+  },
+  pickers = {
+    live_grep = {
+      additional_args = function(opts)
+        return {"--hidden"}
+      end
+    },
+    find_files = {
+      hidden = true
+    }
+  },
+}
+
 -- LSP ------------------------------------------------------------------
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
