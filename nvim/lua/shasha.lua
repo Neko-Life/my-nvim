@@ -2,11 +2,11 @@
 -- examples for your init.lua
 
 -- disable netrw at the very start of your init.lua (strongly advised)
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- set termguicolors to enable highlight groups
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 --
 -- This function has been generated from your
@@ -99,25 +99,25 @@ local function nvim_tree_on_attach(bufnr)
 end
 
 -- setup with some options
--- require("nvim-tree").setup({
---   sort_by = "case_sensitive",
---   view = {
---     adaptive_size = true,
---     mappings = {
---       list = {
---         { key = "u", action = "dir_up" },
---       },
---     },
---     relativenumber = true,
---   },
---   renderer = {
---     group_empty = true,
---   },
---   filters = {
---     dotfiles = true,
---   },
---   on_attach = nvim_tree_on_attach,
--- })
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+    relativenumber = true,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+  on_attach = nvim_tree_on_attach,
+})
 
 -- Telescope
 require('telescope').setup{

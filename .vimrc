@@ -130,7 +130,7 @@ Plug 'sbdchd/neoformat' " npm -g install --save-dev prettier
 
 " side file explorer
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons. Telescope also uses this
-" Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-tree.lua'
 
 " Vue highlighting
 " Plug 'posva/vim-vue'
