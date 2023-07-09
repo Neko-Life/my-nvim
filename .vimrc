@@ -214,7 +214,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " NvimTree
-nnoremap <leader>b :NvimTreeToggle<CR>
+nnoremap <leader>e :NvimTreeToggle<CR>
 
 " Open all argument file in tabs
 " tab all
