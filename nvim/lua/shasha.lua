@@ -374,6 +374,8 @@ lspconf.html.setup(
   })
 )
 
+lspconf.svelte.setup{}
+
 -- lspconf.java_language_server.setup(
 --   coq.lsp_ensure_capabilities({
 --     on_attach = on_attach,

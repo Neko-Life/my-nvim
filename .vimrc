@@ -200,12 +200,12 @@ call plug#end()
 
 " ----- MAPPING -----
 " Tabs navigation
-" nnoremap <A-Up> :sp<CR>
-" nnoremap <A-Down> :new<CR>
-" nnoremap <A-Left> :vne<CR>
-" nnoremap <A-Right> :vs<CR>
-" nnoremap <A-CR> :tab sp<CR>
-" nnoremap <A-Space> :tabnew<CR>
+nnoremap <A-Up> :sp<CR>
+nnoremap <A-Down> :new<CR>
+nnoremap <A-Left> :vne<CR>
+nnoremap <A-Right> :vs<CR>
+nnoremap <A-CR> :tab sp<CR>
+nnoremap <A-Space> :tabnew<CR>
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
