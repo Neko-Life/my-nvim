@@ -342,21 +342,24 @@ lspconf.cmake.setup(coq.lsp_ensure_capabilities({
 }))
 
 lspconf.cssls.setup(
-coq.lsp_ensure_capabilities({
---     capabilities = capabilities,
-  on_attach = on_attach,
-  flags = lsp_flags,
-}))
+  coq.lsp_ensure_capabilities({
+  --     capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+  })
+)
 
-lspconf.emmet_ls.setup(coq.lsp_ensure_capabilities({
---     capabilities = capabilities,
-  on_attach = on_attach,
-  flags = lsp_flags,
-  filetypes = {
-    -- react js
-    "javascript", "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby" 
-  },
-}))
+lspconf.emmet_ls.setup(
+  coq.lsp_ensure_capabilities({
+  --     capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+    filetypes = {
+      -- react js
+      "javascript", "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby" 
+    },
+  })
+)
 
 --Enable (broadcasting) snippet capability for completion
 local html_cap = vim.lsp.protocol.make_client_capabilities()
@@ -374,44 +377,44 @@ lspconf.html.setup(
   })
 )
 
-lspconf.svelte.setup{
+lspconf.svelte.setup(
   coq.lsp_ensure_capabilities({
     on_attach = on_attach,
     flags = lsp_flags,
   })
-}
+)
 
-lspconf.lua_ls.setup {
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        -- library = {
-        --   [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-        --   [vim.fn.stdpath "config" .. "/lua"] = true,
-        -- },
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
+lspconf.lua_ls.setup(
+  coq.lsp_ensure_capabilities({
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = 'LuaJIT',
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {'vim'},
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file("", true),
+          -- library = {
+          --   [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+          --   [vim.fn.stdpath "config" .. "/lua"] = true,
+          -- },
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
+        },
       },
     },
-  },
-  cmd = { "/home/neko-chan/repos/lua-language-server-3.6.23-linux-x64/bin/lua-language-server" },
-  coq.lsp_ensure_capabilities({
+    cmd = { "/home/neko-chan/repos/lua-language-server-3.6.23-linux-x64/bin/lua-language-server" },
     on_attach = on_attach,
     flags = lsp_flags,
   })
-}
+)
 
 -- lspconf.java_language_server.setup(
 --   coq.lsp_ensure_capabilities({
