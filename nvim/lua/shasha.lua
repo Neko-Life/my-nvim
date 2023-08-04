@@ -416,6 +416,15 @@ lspconf.lua_ls.setup(
   })
 )
 
+-- Python lsp
+-- pacman -S python-lsp-server python-mccabe python-pycodestyle python-pydocstyle python-pyflakes python-pylint python-rope flake8 yapf python-whatthepatch python-pystemmer python-appdirs
+lspconf.pylsp.setup(
+  coq.lsp_ensure_capabilities({
+    on_attach = on_attach,
+    flags = lsp_flags,
+  })
+)
+
 -- lspconf.java_language_server.setup(
 --   coq.lsp_ensure_capabilities({
 --     on_attach = on_attach,
