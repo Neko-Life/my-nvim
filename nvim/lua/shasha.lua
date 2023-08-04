@@ -410,7 +410,7 @@ lspconf.lua_ls.setup(
         },
       },
     },
-    cmd = { "/home/neko-chan/repos/lua-language-server-3.6.23-linux-x64/bin/lua-language-server" },
+    cmd = { "/home/neko-chan/repos/lua-language-server/bin/lua-language-server" },
     on_attach = on_attach,
     flags = lsp_flags,
   })
