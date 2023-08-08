@@ -96,7 +96,14 @@ vim.keymap.set('n', '<leader>do', '<cmd>DiffviewOpen<cr>')
 -- NvimTree
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>')
 
--- 
+-- move window to new tab: <Ctrl-W> T
+
+-- Terminal
+vim.keymap.set('n', '<leader>tt', '<cmd>tabe term://fish<cr>')
+vim.keymap.set('n', '<leader>th', '<cmd>e term://fish<cr>')
+
+
+-- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
 
 -- ejs syntax workaround
