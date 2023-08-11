@@ -6,6 +6,8 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'screenline'
 vim.opt.scrolloff = 14
 
+vim.opt.mouse = ''
+
 --2 spaces shiftwidth for literally every single js project
 vim.opt.sw = 2
 
@@ -20,6 +22,9 @@ vim.opt.updatetime = 300
 -- set foldexpr=nvim_treesitter#foldexpr()
 -- set nofoldenable                     " Disable folding at startup.
 vim.opt.et = true
+
+-- no VertSplit
+vim.opt.fillchars = "vert:|"
 
 -- Open all argument file in tabs
 -- tab all
@@ -185,11 +190,69 @@ require('shasha')
 -- let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 -- Theme
-vim.cmd('colorscheme habamax')
--- END tender.vim config
 
--- transparent bg
-vim.cmd('hi Normal guibg=NONE')
+-- transparent bg for all colorscheme
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi Normal guibg=NONE'
+})
+
+-- clear VertSplit color
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi clear VertSplit'
+})
+
+-- status line color
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi StatusLine ctermfg=NONE ctermbg=NONE cterm=bold,reverse gui=bold guifg=NONE guibg=NONE'
+})
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi StatusLineNC ctermfg=NONE ctermbg=NONE cterm=reverse gui=bold guifg=NONE guibg=#303030'
+})
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi TabLine ctermfg=NONE ctermbg=NONE guifg=NONE guibg=#303030'
+})
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi TabLineFill ctermfg=NONE ctermbg=NONE guifg=NONE gui=bold guibg=#303030'
+})
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi TabLineSel cterm=bold gui=bold'
+})
+
+-- default
+-- :hi StatusLineNC
+-- StatusLineNC   xxx cterm=reverse gui=bold guibg=#303030
+-- :hi StatusLine
+-- StatusLine     xxx cterm=bold,reverse gui=bold
+--
+-- :hi TabLine
+-- TabLine        xxx cterm=underline ctermfg=15 ctermbg=242 guibg=#303030
+-- :hi TabLineFill
+-- TabLineFill    xxx cterm=reverse gui=bold guibg=#303030
+-- :hi TabLineSel
+-- TabLineSel     xxx cterm=bold gui=bold
+
+-- habamax
+--:hi StatusLine
+-- StatusLine     xxx ctermfg=234 ctermbg=247 gui=bold guifg=#1c1c1c
+-- :hi StatusLineNC
+-- StatusLineNC   xxx ctermfg=234 ctermbg=243 gui=bold guifg=#1c1c1c guibg=#303030
+--
+-- :hi TabLine
+-- TabLine        xxx ctermfg=234 ctermbg=243 guifg=#1c1c1c guibg=#767676
+-- :hi TabLineFill
+-- TabLineFill    xxx ctermfg=234 ctermbg=243 guifg=#1c1c1c guibg=#767676
+-- :hi TabLineSel
+-- TabLineSel     xxx cterm=bold gui=bold
+
+-- set theme
+vim.cmd('colorscheme habamax')
 
 -- default scheme color override
 vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
@@ -222,10 +285,6 @@ vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
 })
 vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
   group = mygroup,
-  command = 'hi StatusLine gui=bold guibg=#303030'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
   command = 'hi Visual guibg=#404040'
 })
 vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
@@ -245,13 +304,10 @@ vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
   command = 'hi LineNr guifg=#585858 gui=bold'
 })
 
-vim.opt.mouse = ''
-
 -- gitgutter colors
 vim.cmd('hi GitGutterAdd    guifg=#009900 ctermfg=2')
 vim.cmd('hi GitGutterChange guifg=#bbbb00 ctermfg=3')
 vim.cmd('hi GitGutterDelete guifg=#ff2222 ctermfg=1')
-
 -- Themes ===========================================
 
 -- toggle nvim tree/side file explorer
