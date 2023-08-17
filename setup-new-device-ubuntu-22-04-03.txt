@@ -1,0 +1,66 @@
+# setting up new device: ubuntu/wsl
+
+# init
+sudo apt update
+sudo apt upgrade
+sudo apt install neofetch
+
+# fonts
+mkdir -p ~/repos
+cd ~/repos
+git clone https://github.com/ryanoasis/nerd-fonts.git
+
+# ssh cred, eval with bash
+ssh-keygen -t ed25519
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+# add public key to git
+
+# fish
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt update
+sudo apt install fish
+chsh -s /usr/bin/fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+omf install bobthefish
+
+# nvim
+sudo apt install build-essential pkg-config cmake make zlib1g-dev autoconf automake libtool libcurl4-openssl-dev libssl-dev libsodium-dev libopus-dev libogg-dev ffmpeg postgresql
+
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+
+sudo apt install python2-dev python3-dev python3-pip python3-neovim python3-venv vim neovim
+
+# plug
+cd ~
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# config
+cd ~/repos
+git clone https://github.com/Neko-Life/my-nvim.git
+cd my-nvim
+cp .vimrc ~
+cp nvim/ ~/.config/ -r
+
+# fish nvm
+# need fisher
+fish
+cd
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install jorgebucaran/nvm.fish
+
+# install node
+nvm install 18
+nvm use 18
+node --version >~/.nvmrc
+
+# webdev plugins
+    curl https://c.quick-lint-js.com/quick-lint-js-release.key | sudo apt-key add -
+    printf '\n# From: https://quick-lint-js.com/install/neovim/debian/\ndeb [arch=amd64,arm64] https://c.quick-lint-js.com/debian experimental main\n' | sudo tee /etc/apt/sources.list.d/quick-lint-js.list
+    sudo apt update
+    sudo apt install quick-lint-js quick-lint-js-vim
+
+nvm use
+npm i -g typescript typescript-language-server emmet-ls yarn
