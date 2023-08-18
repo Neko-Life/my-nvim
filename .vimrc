@@ -162,6 +162,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
+" codestats, requires plenary.nvim
+Plug 'liljaylj/codestats.nvim'
+
 " Themes ===========================================
 
 " Plug 'jacoborus/tender.vim'

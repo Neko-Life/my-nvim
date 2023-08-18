@@ -818,3 +818,14 @@ require("presence"):setup({
     workspace_text      = "Working on %s",            -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
     line_number_text    = "Line %s out of %s",        -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
 })
+
+-- codestats
+require('codestats').setup {
+    username = nil,  -- needed to fetch profile data
+    base_url = 'https://codestats.net',  -- codestats.net base url
+    api_key = nil, -- API key
+    send_on_exit = true,  -- send xp on nvim exit
+    send_on_timer = true,  -- send xp on timer
+    timer_interval = 60000,  -- timer interval in milliseconds (minimum 1000ms to prevent DDoSing codestat.net servers)
+    curl_timeout = 5,  -- curl request timeout in seconds
+}

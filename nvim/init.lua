@@ -308,6 +308,17 @@ vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
 vim.cmd('hi GitGutterAdd    guifg=#009900 ctermfg=2')
 vim.cmd('hi GitGutterChange guifg=#bbbb00 ctermfg=3')
 vim.cmd('hi GitGutterDelete guifg=#ff2222 ctermfg=1')
+
+-- codestats
+vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertEnter' }, {
+  pattern = '*',
+  group = mygroup,
+  callback = function()
+    vim.cmd('CodeStatsXpSend')
+    vim.cmd('CodeStatsProfileUpdate')
+  end,
+})
+
 -- Themes ===========================================
 
 -- toggle nvim tree/side file explorer
