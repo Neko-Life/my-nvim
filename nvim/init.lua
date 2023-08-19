@@ -75,38 +75,43 @@ vim.cmd('so ~/.vimrc')
 --   :set sw=2 ts=8
 
 -- ----- MAPPING -----
+-- default mapping options
+local opts = { noremap=true }
+
 -- Tabs navigation
-vim.keymap.set('n', '<A-Up>', '<cmd>sp<cr>')
-vim.keymap.set('n', '<A-Down>', '<cmd>new<cr>')
-vim.keymap.set('n', '<A-Left>', '<cmd>vne<cr>')
-vim.keymap.set('n', '<A-Right>', '<cmd>vs<cr>')
-vim.keymap.set('n', '<A-CR>', '<cmd>tab sp<cr>')
-vim.keymap.set('n', '<A-Space>', '<cmd>tabnew<cr>')
+vim.keymap.set('n', '<A-Up>', '<cmd>sp<cr>', opts)
+vim.keymap.set('n', '<A-Down>', '<cmd>new<cr>', opts)
+vim.keymap.set('n', '<A-Left>', '<cmd>vne<cr>', opts)
+vim.keymap.set('n', '<A-Right>', '<cmd>vs<cr>', opts)
+vim.keymap.set('n', '<A-CR>', '<cmd>tab sp<cr>', opts)
+vim.keymap.set('n', '<A-Space>', '<cmd>tabnew<cr>', opts)
 
 -- Telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>f?', builtin.oldfiles, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, opts) -- Find Files
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts) -- Find Grep
+vim.keymap.set('n', '<leader>fb', builtin.buffers, opts) -- Find filename in Buffer list
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts) -- Find Help
+vim.keymap.set('n', '<leader>f?', builtin.oldfiles, opts) -- old Files?
 
 -- git rev viewer
 -- diffview
-vim.keymap.set('n', '<leader>df', '<cmd>DiffviewFileHistory %<cr>')
-vim.keymap.set('n', '<leader>dh', '<cmd>DiffviewFileHistory<cr>')
-vim.keymap.set('n', '<leader>dc', '<cmd>DiffviewClose<cr>')
-vim.keymap.set('n', '<leader>do', '<cmd>DiffviewOpen<cr>')
+vim.keymap.set('n', '<leader>df', '<cmd>DiffviewFileHistory %<cr>', opts) -- Diff File history
+vim.keymap.set('n', '<leader>dh', '<cmd>DiffviewFileHistory<cr>', opts) -- Diff History
+vim.keymap.set('n', '<leader>dc', '<cmd>DiffviewClose<cr>', opts) -- Diff Close
+vim.keymap.set('n', '<leader>do', '<cmd>DiffviewOpen<cr>', opts) -- Diff Open
 
 -- NvimTree
-vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', opts) -- Explore
 
 -- move window to new tab: <Ctrl-W> T
 
 -- Terminal
-vim.keymap.set('n', '<leader>tt', '<cmd>tabe term://fish<cr>')
-vim.keymap.set('n', '<leader>th', '<cmd>e term://fish<cr>')
+vim.keymap.set('n', '<leader>tt', '<cmd>tabe term://fish<cr>', opts) -- Terminal in new Tab
+vim.keymap.set('n', '<leader>th', '<cmd>e term://fish<cr>', opts) -- Terminal Here
 
+-- GitGutter
+vim.keymap.set('n', '<leader>vc', '<cmd>GitGutterPreviewHunk<cr>', opts) -- View Changes
 
 -- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
@@ -310,14 +315,14 @@ vim.cmd('hi GitGutterChange guifg=#bbbb00 ctermfg=3')
 vim.cmd('hi GitGutterDelete guifg=#ff2222 ctermfg=1')
 
 -- codestats
-vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertEnter' }, {
-  pattern = '*',
-  group = mygroup,
-  callback = function()
-    vim.cmd('CodeStatsXpSend')
-    vim.cmd('CodeStatsProfileUpdate')
-  end,
-})
+-- vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertEnter' }, {
+--   pattern = '*',
+--   group = mygroup,
+--   callback = function()
+--     vim.cmd('CodeStatsXpSend')
+--     vim.cmd('CodeStatsProfileUpdate')
+--   end,
+-- })
 
 -- Themes ===========================================
 
