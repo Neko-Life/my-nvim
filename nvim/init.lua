@@ -117,6 +117,11 @@ vim.keymap.set('n', '<leader>uh', '<cmd>GitGutterUndoHunk<cr>', opts) -- Undo Hu
 vim.keymap.set('n', '<leader>nh', '<cmd>GitGutterNextHunk<cr>', opts) -- Next Hunk
 vim.keymap.set('n', '<leader>ph', '<cmd>GitGutterPrevHunk<cr>', opts) -- Prev Hunk
 
+-- git
+vim.keymap.set('n', '<leader>ga', '<cmd>!git add %<cr>', opts) -- Git Add current file
+vim.keymap.set('n', '<leader>gc', ':!git commit -m \'\'<Left>', opts) -- Git Commit with message
+vim.keymap.set('n', '<leader>gp', '<cmd>!git push<cr>', opts) -- Git Push
+
 -- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
 
