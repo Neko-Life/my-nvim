@@ -111,7 +111,11 @@ vim.keymap.set('n', '<leader>tt', '<cmd>tabe term://fish<cr>', opts) -- Terminal
 vim.keymap.set('n', '<leader>th', '<cmd>e term://fish<cr>', opts) -- Terminal Here
 
 -- GitGutter
-vim.keymap.set('n', '<leader>vc', '<cmd>GitGutterPreviewHunk<cr>', opts) -- View Changes
+vim.keymap.set('n', '<leader>vh', '<cmd>GitGutterPreviewHunk<cr>', opts) -- View Hunk
+vim.keymap.set('n', '<leader>sh', '<cmd>GitGutterStageHunk<cr>', opts) -- Stage Hunk
+vim.keymap.set('n', '<leader>uh', '<cmd>GitGutterUndoHunk<cr>', opts) -- Undo Hunk
+vim.keymap.set('n', '<leader>nh', '<cmd>GitGutterNextHunk<cr>', opts) -- Next Hunk
+vim.keymap.set('n', '<leader>ph', '<cmd>GitGutterPrevHunk<cr>', opts) -- Prev Hunk
 
 -- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
