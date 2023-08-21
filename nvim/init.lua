@@ -54,10 +54,14 @@ vim.g.netrw_banner = 0
 
 -- debugger
 vim.g.vimspector_enable_mappings = 'HUMAN'
-vim.g.vimspector_base_dir='/home/neko-chan/.local/share/nvim/plugged/vimspector'
+vim.g.vimspector_base_dir = '/home/neko-chan/.local/share/nvim/plugged/vimspector'
 
 -- neoformat: try use node formatter first
 vim.g.neoformat_try_node_exe = 1
+
+-- codestats config
+-- vim.g.codestats_api_key =
+-- vim.g.codestats_api_url =
 
 -- source .vimrc
 vim.cmd('so ~/.vimrc')
@@ -323,7 +327,7 @@ vim.cmd('hi GitGutterAdd    guifg=#009900 ctermfg=2')
 vim.cmd('hi GitGutterChange guifg=#bbbb00 ctermfg=3')
 vim.cmd('hi GitGutterDelete guifg=#ff2222 ctermfg=1')
 
--- codestats
+-- codestats lua
 -- vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertEnter' }, {
 --   pattern = '*',
 --   group = mygroup,

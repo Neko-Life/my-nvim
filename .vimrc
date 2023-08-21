@@ -162,8 +162,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
-" codestats, requires plenary.nvim
-Plug 'liljaylj/codestats.nvim'
+" official codestats
+" Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
+
+" codestats lua, requires plenary.nvim
+" Plug 'liljaylj/codestats.nvim'
 
 " Themes ===========================================
 
