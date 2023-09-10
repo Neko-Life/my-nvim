@@ -67,7 +67,7 @@ Plug 'windwp/nvim-ts-autotag'
 " Plug 'nvim-treesitter/playground'
 
 " debugger
-" Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
 
 " React Snippets
 " Plug 'SirVer/ultisnips'
