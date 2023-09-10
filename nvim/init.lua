@@ -129,7 +129,7 @@ vim.keymap.set('n', '<leader>gp', '<cmd>!git push<cr>', opts) -- Git Push
 -- vimspector
 vim.keymap.set('n', '<Space><Space>', '<Plug>VimspectorContinue', opts) -- Start or continue debugging
 vim.keymap.set('n', '<Space>ds', '<Plug>VimspectorStop', opts) -- Debug Stop
-vim.keymap.set('n', '<Space>dq', '<Plug>VimspectorReset', opts) -- Debug Quit
+vim.keymap.set('n', '<Space>dq', '<cmd>VimspectorReset<CR>', opts) -- Debug Quit
 vim.keymap.set('n', '<Space>dr', '<Plug>VimspectorRestart', opts) -- Debug Restart
 vim.keymap.set('n', '<Space>di', '<Plug>VimspectorBalloonEval', opts) -- Debug Inspect
 vim.keymap.set('x', '<Space>di', '<Plug>VimspectorBalloonEval', opts) -- Debug Inspect visual mode
