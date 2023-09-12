@@ -109,17 +109,23 @@ vim.keymap.set('n', '<leader>do', '<cmd>DiffviewOpen<cr>', opts) -- Diff Open
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', opts) -- Explore
 
 -- move window to new tab: <Ctrl-W> T
+-- move window to other window: just open the window buffer in that new window
 
 -- Terminal
 vim.keymap.set('n', '<leader>tt', '<cmd>tabe term://fish<cr>', opts) -- Terminal in new Tab
 vim.keymap.set('n', '<leader>th', '<cmd>e term://fish<cr>', opts) -- Terminal Here
 
 -- GitGutter
-vim.keymap.set('n', '<leader>vh', '<cmd>GitGutterPreviewHunk<cr>', opts) -- View Hunk
-vim.keymap.set('n', '<leader>sh', '<cmd>GitGutterStageHunk<cr>', opts) -- Stage Hunk
-vim.keymap.set('n', '<leader>uh', '<cmd>GitGutterUndoHunk<cr>', opts) -- Undo Hunk
-vim.keymap.set('n', '<leader>nh', '<cmd>GitGutterNextHunk<cr>', opts) -- Next Hunk
-vim.keymap.set('n', '<leader>ph', '<cmd>GitGutterPrevHunk<cr>', opts) -- Prev Hunk
+-- n  [c           @<Plug>(GitGutterPrevHunk)
+-- n  \hp          @<Plug>(GitGutterPreviewHunk)
+-- n  \hu          @<Plug>(GitGutterUndoHunk)
+-- n  \hs          @<Plug>(GitGutterStageHunk)
+-- x  \hs          @<Plug>(GitGutterStageHunk)
+-- n  ]c           @<Plug>(GitGutterNextHunk)
+-- x  ac           @<Plug>(GitGutterTextObjectOuterVisual)
+-- o  ac           @<Plug>(GitGutterTextObjectOuterPending)
+-- x  ic           @<Plug>(GitGutterTextObjectInnerVisual)
+-- o  ic           @<Plug>(GitGutterTextObjectInnerPending)
 
 -- git, broken prompting
 vim.keymap.set('n', '<leader>ga', '<cmd>!git add %<cr>', opts) -- Git Add current file
@@ -127,23 +133,23 @@ vim.keymap.set('n', '<leader>gc', ':!git commit -m \'\'<Left>', opts) -- Git Com
 vim.keymap.set('n', '<leader>gp', '<cmd>!git push<cr>', opts) -- Git Push
 
 -- vimspector
-vim.keymap.set('n', '<Space><Space>', '<Plug>VimspectorContinue', opts) -- Start or continue debugging
-vim.keymap.set('n', '<Space>ds', '<Plug>VimspectorStop', opts) -- Debug Stop
-vim.keymap.set('n', '<Space>dq', '<cmd>VimspectorReset<CR>', opts) -- Debug Quit
-vim.keymap.set('n', '<Space>dr', '<Plug>VimspectorRestart', opts) -- Debug Restart
-vim.keymap.set('n', '<Space>di', '<Plug>VimspectorBalloonEval', opts) -- Debug Inspect
-vim.keymap.set('x', '<Space>di', '<Plug>VimspectorBalloonEval', opts) -- Debug Inspect visual mode
-vim.keymap.set('n', '<Space>p', '<Plug>VimspectorPause', opts) -- Pause
-vim.keymap.set('n', '<Space>b', '<Plug>VimspectorToggleBreakpoint', opts) -- Breakpoint
-vim.keymap.set('n', '<Space>B', '<Plug>VimspectorBreakpoints', opts) -- show Breakpoint
-vim.keymap.set('n', '<Space>cb', '<Plug>VimspectorToggleConditionalBreakpoint', opts) -- Conditional Breakpoint
-vim.keymap.set('n', '<Space>cg', '<Plug>VimspectorRunToCursor', opts) -- Cursor Go
-vim.keymap.set('n', '<Space>n', '<Plug>VimspectorStepOver', opts) -- Next
-vim.keymap.set('n', '<Space>i', '<Plug>VimspectorStepInto', opts) -- In
-vim.keymap.set('n', '<Space>N', '<Plug>VimspectorStepOut', opts) -- Next step out
-vim.keymap.set('n', '<Space>fu', '<Plug>VimspectorUpFrame', opts) -- Frame Up
-vim.keymap.set('n', '<Space>fd', '<Plug>VimspectorDownFrame', opts) -- Frame Down
-vim.keymap.set('n', '<Space>sd', '<Plug>VimspectorDisassemble', opts) -- Show Disassemble
+vim.keymap.set('n', '<leader><Space><Space>', '<Plug>VimspectorContinue', opts) -- Start or continue debugging
+vim.keymap.set('n', '<leader><Space>ds', '<Plug>VimspectorStop', opts) -- Debug Stop
+vim.keymap.set('n', '<leader><Space>dq', '<cmd>VimspectorReset<CR>', opts) -- Debug Quit
+vim.keymap.set('n', '<leader><Space>dr', '<Plug>VimspectorRestart', opts) -- Debug Restart
+vim.keymap.set('n', '<leader><Space>di', '<Plug>VimspectorBalloonEval', opts) -- Debug Inspect
+vim.keymap.set('x', '<leader><Space>di', '<Plug>VimspectorBalloonEval', opts) -- Debug Inspect visual mode
+vim.keymap.set('n', '<leader><Space>p', '<Plug>VimspectorPause', opts) -- Pause
+vim.keymap.set('n', '<leader><Space>b', '<Plug>VimspectorToggleBreakpoint', opts) -- Breakpoint
+vim.keymap.set('n', '<leader><Space>B', '<Plug>VimspectorBreakpoints', opts) -- show Breakpoint
+vim.keymap.set('n', '<leader><Space>cb', '<Plug>VimspectorToggleConditionalBreakpoint', opts) -- Conditional Breakpoint
+vim.keymap.set('n', '<leader><Space>cg', '<Plug>VimspectorRunToCursor', opts) -- Cursor Go
+vim.keymap.set('n', '<leader><Space>n', '<Plug>VimspectorStepOver', opts) -- Next
+vim.keymap.set('n', '<leader><Space>i', '<Plug>VimspectorStepInto', opts) -- In
+vim.keymap.set('n', '<leader><Space>N', '<Plug>VimspectorStepOut', opts) -- Next step out
+vim.keymap.set('n', '<leader><Space>fu', '<Plug>VimspectorUpFrame', opts) -- Frame Up
+vim.keymap.set('n', '<leader><Space>fd', '<Plug>VimspectorDownFrame', opts) -- Frame Down
+vim.keymap.set('n', '<leader><Space>sd', '<Plug>VimspectorDisassemble', opts) -- Show Disassemble
 
 -- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
