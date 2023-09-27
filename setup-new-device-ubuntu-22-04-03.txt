@@ -25,7 +25,7 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 omf install bobthefish
 
 # nvim
-sudo apt install build-essential pkg-config cmake make zlib1g-dev autoconf automake libtool libcurl4-openssl-dev libssl-dev libsodium-dev libopus-dev libogg-dev ffmpeg postgresql
+sudo apt install build-essential pkg-config cmake make zlib1g-dev autoconf automake libtool libcurl4-openssl-dev libssl-dev libsodium-dev libopus-dev libogg-dev ffmpeg postgresql libpq-dev
 
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
