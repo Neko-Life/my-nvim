@@ -1,33 +1,4 @@
 -- ----- SETTINGS -----
--- set shiftwidth=8
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = 'screenline'
-vim.opt.scrolloff = 14
-
-vim.opt.mouse = ''
-
---2 spaces shiftwidth for literally every single js project
-vim.opt.sw = 2
-
--- no text wrapping
-vim.opt.wrap = false
-
--- gitgutter update time, this setting also used by swap save crash recovery
-vim.opt.updatetime = 300
-
--- folding
--- set foldmethod=expr
--- set foldexpr=nvim_treesitter#foldexpr()
--- set nofoldenable                     " Disable folding at startup.
-vim.opt.et = true
-
--- no VertSplit
-vim.opt.fillchars = "vert:|"
-
--- Open all argument file in tabs
--- tab all
 -- Autostart coq
 vim.g.coq_settings = { auto_start = true }
 
@@ -65,6 +36,40 @@ vim.g.neoformat_try_node_exe = 1
 
 -- source .vimrc
 vim.cmd('so ~/.vimrc')
+
+---- Settings should be after plug config ----
+-- set shiftwidth=8
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'screenline'
+vim.opt.scrolloff = 14
+
+vim.opt.mouse = ''
+
+--2 spaces shiftwidth for literally every single js project
+vim.opt.sw = 2
+
+-- no text wrapping
+vim.opt.wrap = false
+
+-- gitgutter update time, this setting also used by swap save crash recovery
+vim.opt.updatetime = 300
+
+-- folding
+-- set foldmethod=expr
+-- set foldexpr=nvim_treesitter#foldexpr()
+-- set nofoldenable                     " Disable folding at startup.
+vim.opt.et = true
+
+-- no VertSplit
+vim.opt.fillchars = "vert:|"
+
+-- disable syntax highlighting
+vim.cmd('syntax off')
+
+-- Open all argument file in tabs
+-- tab all
 
 -- 	[FOR INDENTATION PRACTICE]
 -- filetype indent off   " Disable file-type-specific indentation

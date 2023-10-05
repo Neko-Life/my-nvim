@@ -47,7 +47,7 @@ Plug 'andweeb/presence.nvim'
 Plug 'neovim/nvim-lspconfig' " LSP --------------------
 " Plug 'williamboman/mason.nvim' " lsp installer and manager
 
-Plug 'jparise/vim-graphql' " GraphQL syntax highlighting
+" Plug 'jparise/vim-graphql' " GraphQL syntax highlighting
 Plug 'p00f/clangd_extensions.nvim' " clangd ls extension features
 Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
