@@ -62,7 +62,7 @@ Plug 'windwp/nvim-ts-autotag'
 " Plug 'nvim-treesitter/nvim-treesitter-refactor'
 " Plug 'folke/twilight.nvim'
 " Plug 'theHamsta/nvim-treesitter-pairs'
-" Plug 'p00f/nvim-ts-rainbow'
+Plug 'hiphish/rainbow-delimiters.nvim'
 " Plug 'nvim-treesitter/nvim-treesitter-context'
 " Plug 'nvim-treesitter/playground'
 

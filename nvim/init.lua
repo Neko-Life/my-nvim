@@ -83,6 +83,31 @@ vim.cmd('syntax off')
 --   example if vscode space indentation is 2 spaces, run the commands:
 --   :set sw=2 ts=8
 
+-- Beautiful parenthesis
+-- Default setting is fine
+-- This module contains a number of default definitions
+-- local rainbow_delimiters = require 'rainbow-delimiters'
+
+-- vim.g.rainbow_delimiters = {
+--     strategy = {
+--         [''] = rainbow_delimiters.strategy['global'],
+--         vim = rainbow_delimiters.strategy['local'],
+--     },
+--     query = {
+--         [''] = 'rainbow-delimiters',
+--         lua = 'rainbow-blocks',
+--     },
+--     highlight = {
+--         'RainbowDelimiterRed',
+--         'RainbowDelimiterYellow',
+--         'RainbowDelimiterBlue',
+--         'RainbowDelimiterOrange',
+--         'RainbowDelimiterGreen',
+--         'RainbowDelimiterViolet',
+--         'RainbowDelimiterCyan',
+--     },
+-- }
+
 -- ----- MAPPING -----
 -- default mapping options
 local opts = { noremap=true }
