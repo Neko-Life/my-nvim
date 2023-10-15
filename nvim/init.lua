@@ -269,6 +269,10 @@ vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
   group = mygroup,
   command = 'hi Normal guibg=NONE'
 })
+vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
+  group = mygroup,
+  command = 'hi Pmenu guibg=NONE'
+})
 
 -- clear VertSplit color
 vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
@@ -283,7 +287,7 @@ vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
 })
 vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
   group = mygroup,
-  command = 'hi StatusLineNC ctermfg=NONE ctermbg=NONE cterm=reverse gui=bold guifg=NONE guibg=#303030'
+  command = 'hi StatusLineNC ctermfg=NONE ctermbg=NONE cterm=reverse gui=bold guifg=NONE guibg=NONE'
 })
 vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
   group = mygroup,
@@ -328,10 +332,6 @@ vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
 vim.cmd('colorscheme habamax')
 
 -- default scheme color override
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi Pmenu guibg=#262626'
-})
 vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
   group = mygroup,
   command = 'hi CursorLine guibg=#101010'
