@@ -182,7 +182,7 @@ vim.keymap.set('n', '<leader><Space>fd', '<Plug>VimspectorDownFrame', opts) -- F
 vim.keymap.set('n', '<leader><Space>sd', '<Plug>VimspectorDisassemble', opts) -- Show Disassemble
 
 -- ----- AUTOCOMMANDS -----
-local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
+local mygroup = vim.api.nvim_create_augroup('shasha_my_nvim', { clear = true })
 
 -- ejs syntax workaround
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
@@ -265,42 +265,23 @@ require('shasha')
 -- Theme
 
 -- transparent bg for all colorscheme
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi Normal guibg=NONE'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi Pmenu guibg=NONE'
-})
+
+vim.cmd([[
+au shasha_my_nvim ColorScheme * hi Normal guibg=NONE
+au shasha_my_nvim ColorScheme * hi Pmenu guibg=NONE
+
+au shasha_my_nvim ColorScheme * hi clear VertSplit
+
+au shasha_my_nvim ColorScheme * hi StatusLine ctermfg=NONE ctermbg=NONE cterm=bold,reverse gui=bold guifg=NONE guibg=NONE
+au shasha_my_nvim ColorScheme * hi StatusLineNC ctermfg=NONE ctermbg=NONE cterm=reverse gui=bold guifg=NONE guibg=NONE
+au shasha_my_nvim ColorScheme * hi TabLine ctermfg=NONE ctermbg=NONE guifg=NONE guibg=#303030
+au shasha_my_nvim ColorScheme * hi TabLineFill ctermfg=NONE ctermbg=NONE guifg=NONE gui=bold guibg=#303030
+au shasha_my_nvim ColorScheme * hi TabLineSel cterm=bold gui=bold
+]])
 
 -- clear VertSplit color
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi clear VertSplit'
-})
 
 -- status line color
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi StatusLine ctermfg=NONE ctermbg=NONE cterm=bold,reverse gui=bold guifg=NONE guibg=NONE'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi StatusLineNC ctermfg=NONE ctermbg=NONE cterm=reverse gui=bold guifg=NONE guibg=NONE'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi TabLine ctermfg=NONE ctermbg=NONE guifg=NONE guibg=#303030'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi TabLineFill ctermfg=NONE ctermbg=NONE guifg=NONE gui=bold guibg=#303030'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
-  group = mygroup,
-  command = 'hi TabLineSel cterm=bold gui=bold'
-})
 
 -- default
 -- :hi StatusLineNC
@@ -332,50 +313,19 @@ vim.api.nvim_create_autocmd({ 'ColorScheme *' }, {
 vim.cmd('colorscheme habamax')
 
 -- default scheme color override
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi CursorLine guibg=#101010'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi CursorColumn guibg=#101010'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi Folded guibg=#303030'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi TabLine gui=NONE guibg=#303030'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi TabLineFill gui=bold guibg=#303030'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi NonText guifg=#585858'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi Visual guibg=#404040'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi PmenuSel guibg=#404040'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi MatchParen guibg=#404040'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi Directory gui=bold guifg=#87afaf'
-})
-vim.api.nvim_create_autocmd({ 'ColorScheme default' }, {
-  group = mygroup,
-  command = 'hi LineNr guifg=#585858 gui=bold'
-})
+vim.cmd([[
+au shasha_my_nvim ColorScheme default hi CursorLine guibg=#101010
+au shasha_my_nvim ColorScheme default hi CursorColumn guibg=#101010
+au shasha_my_nvim ColorScheme default hi Folded guibg=#303030
+au shasha_my_nvim ColorScheme default hi TabLine gui=NONE guibg=#303030
+au shasha_my_nvim ColorScheme default hi TabLineFill gui=bold guibg=#303030
+au shasha_my_nvim ColorScheme default hi NonText guifg=#585858
+au shasha_my_nvim ColorScheme default hi Visual guibg=#404040
+au shasha_my_nvim ColorScheme default hi PmenuSel guibg=#404040
+au shasha_my_nvim ColorScheme default hi MatchParen guibg=#404040
+au shasha_my_nvim ColorScheme default hi Directory gui=bold guifg=#87afaf
+au shasha_my_nvim ColorScheme default hi LineNr guifg=#585858 gui=bold
+]])
 
 -- gitgutter colors
 vim.cmd('hi GitGutterAdd    guifg=#009900 ctermfg=2')
