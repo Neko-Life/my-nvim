@@ -152,10 +152,6 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- enable clangd_extensions inlay_hints
-  require("clangd_extensions.inlay_hints").setup_autocmd()
-  require("clangd_extensions.inlay_hints").set_inlay_hints()
-
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -181,7 +177,7 @@ end
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+ (150)
-  debounce_text_changes = 300, -- need 1 second of silence then start disturbing the silence with clangd
+  debounce_text_changes = 500, -- half second wait to update lsp info
 }
 
 -- require("coq_3p") {
@@ -201,9 +197,18 @@ local coq = require("coq");
 local lspconf = require('lspconfig');
 
 lspconf.clangd.setup(coq.lsp_ensure_capabilities({
---     capabilities = capabilities,
-   on_attach = on_attach,
-   flags = lsp_flags,
+  --     capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    -- enable clangd_extensions inlay_hints
+    require("clangd_extensions.inlay_hints").setup_autocmd()
+    require("clangd_extensions.inlay_hints").set_inlay_hints()
+
+    on_attach(client, bufnr);
+  end,
+  flags = {
+    -- need 1 second of silence then start disturbing the silence with clangd
+    debounce_text_changes = 1000,
+  },
 }))
 
 -- Don't need to do this anymore, automatically follows
@@ -360,7 +365,8 @@ lspconf.emmet_ls.setup(
     flags = lsp_flags,
     filetypes = {
       -- react js
-      "javascript", "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby" 
+      -- "javascript", "less", "eruby"
+      "html", "typescriptreact", "javascriptreact", "css", "sass", "scss",
     },
   })
 )
