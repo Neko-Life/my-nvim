@@ -37,6 +37,9 @@ vim.g.neoformat_try_node_exe = 1
 -- gitgutter
 -- vim.g.gitgutter_max_signs = 500
 
+-- set no match parent
+vim.g.loaded_matchparen = 1
+
 -- source .vimrc
 vim.cmd('so ~/.vimrc')
 
@@ -44,8 +47,8 @@ vim.cmd('so ~/.vimrc')
 -- set shiftwidth=8
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = 'screenline'
+-- vim.opt.cursorline = true
+-- vim.opt.cursorlineopt = 'screenline'
 vim.opt.scrolloff = 14
 
 vim.opt.mouse = ''
