@@ -198,11 +198,11 @@ call plug#end()
 "   :set sw=2 ts=8
 
 " gitgutter
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
-set statusline=%{GitStatus()}
+" function! GitStatus()
+"   let [a,m,r] = GitGutterGetHunkSummary()
+"   return printf('+%d ~%d -%d', a, m, r)
+" endfunction
+" set statusline=%{GitStatus()}
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))

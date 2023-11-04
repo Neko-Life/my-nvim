@@ -34,6 +34,9 @@ vim.g.neoformat_try_node_exe = 1
 -- vim.g.codestats_api_key =
 -- vim.g.codestats_api_url =
 
+-- gitgutter
+-- vim.g.gitgutter_max_signs = 500
+
 -- source .vimrc
 vim.cmd('so ~/.vimrc')
 
