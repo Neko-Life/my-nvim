@@ -252,7 +252,11 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 -- let g:ale_fix_on_save = 1
 -- let g:ale_virtualenv_dir_names = []
 
+-- all lspconfig and treesitter stuff
 require('shasha')
+
+-- sonarlint
+require('sonar-conf')
 
 -- lua require('coc-config')
 

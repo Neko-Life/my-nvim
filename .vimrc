@@ -165,6 +165,9 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 " official codestats
 " Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
+" sonarlint
+Plug 'https://gitlab.com/schrieveslaach/sonarlint.nvim'
+
 " codestats lua, requires plenary.nvim
 " Plug 'liljaylj/codestats.nvim'
 
