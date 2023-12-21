@@ -168,6 +168,9 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 " sonarlint
 Plug 'https://gitlab.com/schrieveslaach/sonarlint.nvim'
 
+" lorem ipsum
+Plug 'vim-scripts/loremipsum'
+
 " codestats lua, requires plenary.nvim
 " Plug 'liljaylj/codestats.nvim'
 
