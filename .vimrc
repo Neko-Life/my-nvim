@@ -171,6 +171,14 @@ Plug 'https://gitlab.com/schrieveslaach/sonarlint.nvim'
 " lorem ipsum
 Plug 'vim-scripts/loremipsum'
 
+" view css color codes
+" git clone https://github.com/ap/vim-css-color.git ~/.vim/pack/css-color/start/css-color
+" Plug 'ap/vim-css-color' // not working?
+" if has('textprop')
+"   Plug 'BourgeoisBear/clrzr'
+" endif
+Plug 'NvChad/nvim-colorizer.lua'
+
 " codestats lua, requires plenary.nvim
 " Plug 'liljaylj/codestats.nvim'
 
