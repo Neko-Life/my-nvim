@@ -457,11 +457,26 @@ lspconf.pylsp.setup(
 --   flags = lsp_flags,
 -- }))
 
--- lspconf.tailwindcss.setup(coq.lsp_ensure_capabilities({
--- --     capabilities = capabilities,
---   on_attach = on_attach,
---   flags = lsp_flags,
--- }))
+lspconf.tailwindcss.setup(coq.lsp_ensure_capabilities({
+--     capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+  settings = {
+    tailwindCSS = {
+      classAttributes = { "class", "className", "class:list", "classList", "ngClass", ".*Class.*" },
+      lint = {
+        cssConflict = "warning",
+        invalidApply = "error",
+        invalidConfigPath = "error",
+        invalidScreen = "error",
+        invalidTailwindDirective = "error",
+        invalidVariant = "error",
+        recommendedVariantOrder = "warning"
+      },
+      validate = true
+    }
+  }
+}))
 
 -- nvim-treesitter
 require'nvim-treesitter.configs'.setup {
