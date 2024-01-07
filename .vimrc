@@ -153,7 +153,7 @@ Plug 'tpope/vim-repeat'
 
 " boost production with unimpaired
 "
-" Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 
 " fast navigation with telescope
 " deps command:
