@@ -198,6 +198,19 @@ local lspconf = require('lspconfig');
 
 lspconf.clangd.setup(coq.lsp_ensure_capabilities({
   --     capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--background-index",
+    "-j=12",
+    "--clang-tidy",
+    "--all-scopes-completion",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu",
+    "--header-insertion-decorators",
+    "--function-arg-placeholders",
+    "--malloc-trim",
+    "--pch-storage=memory"
+  },
   on_attach = function(client, bufnr)
     -- enable clangd_extensions inlay_hints
     require("clangd_extensions.inlay_hints").setup_autocmd()
