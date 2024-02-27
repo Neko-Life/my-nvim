@@ -211,8 +211,8 @@ lspconf.clangd.setup(coq.lsp_ensure_capabilities({
     "--function-arg-placeholders=0",
     "--malloc-trim",
     "--pch-storage=memory",
-    "--limit-references=20",
-    "--limit-results=10",
+    "--limit-references=100",
+    "--limit-results=25",
     "--rename-file-limit=4"
   },
   on_attach = function(client, bufnr)
