@@ -160,7 +160,7 @@ Plug 'tpope/vim-unimpaired'
 " pacman -S ripgrep
 " pacman -S fd
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'nvim-telescope/telescope.nvim'" , { 'tag': '0.1.2' }
 
 " official codestats
 " Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
