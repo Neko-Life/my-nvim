@@ -203,13 +203,17 @@ lspconf.clangd.setup(coq.lsp_ensure_capabilities({
     "--background-index",
     "-j=12",
     "--clang-tidy",
+    "--clang-tidy-checks=-*,bugprone-*,cert-*,clang-analyzer-*,concurrency-*,cppcoreguidelines-*,llvm-namespace-comment,modernize-*,performance-*,portability-*,readability-*,-bugprone-implicit-widening-of-multiplication-result,-bugprone-easily-swappable-parameters,-readability-identifier-length,-portability-restrict-system-includes,-modernize-use-trailing-return-type,-cppcoreguidelines-non-private-member-variables-in-classes,-readability-avoid-const-params-in-decls",
     "--all-scopes-completion",
     "--completion-style=detailed",
     "--header-insertion=iwyu",
     "--header-insertion-decorators",
-    "--function-arg-placeholders",
+    "--function-arg-placeholders=0",
     "--malloc-trim",
-    "--pch-storage=memory"
+    "--pch-storage=memory",
+    "--limit-references=20",
+    "--limit-results=10",
+    "--rename-file-limit=4"
   },
   on_attach = function(client, bufnr)
     -- enable clangd_extensions inlay_hints
