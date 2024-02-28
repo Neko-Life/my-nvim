@@ -179,6 +179,11 @@ Plug 'vim-scripts/loremipsum'
 " endif
 Plug 'NvChad/nvim-colorizer.lua'
 
+" database manager
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion'
+
 " codestats lua, requires plenary.nvim
 " Plug 'liljaylj/codestats.nvim'
 
@@ -222,3 +227,6 @@ call plug#end()
 if (has("termguicolors"))
   set termguicolors
 endif
+
+" sql kristijanhusak/vim-dadbod-completion
+autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
