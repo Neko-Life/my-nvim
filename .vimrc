@@ -79,9 +79,6 @@ Plug 'puremourning/vimspector'
 
 " Plug 'jiangmiao/auto-pairs' " Bracket auto pairing and deleting
 
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/nvim-cmp'
 " Plug 'saadparwaiz1/cmp_luasnip'
 " Plug 'L3MON4D3/LuaSnip'
 " Plug 'onsails/lspkind.nvim'
@@ -98,10 +95,28 @@ Plug 'puremourning/vimspector'
 " Plug 'LucHermitte/alternate-lite'
 " Plug 'LucHermitte/lh-cpp'
 
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+
+" completion using cmp
+Plug 'hrsh7th/nvim-cmp'
+
+" cmp sources
+" https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
 Plug 'wakatime/vim-wakatime'
+
 " Plug 'mfussenegger/nvim-lint'
 
 " formatter

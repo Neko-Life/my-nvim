@@ -180,6 +180,8 @@ local lsp_flags = {
   debounce_text_changes = 500, -- half second wait to update lsp info
 }
 
+---------------------------------------- SETUP COMPLETION ----------------------------------------
+
 -- require("coq_3p") {
 --   { src = "builtin/ada"     },
 --   { src = "builtin/c"       },
@@ -193,10 +195,120 @@ local lsp_flags = {
 --   { src = "builtin/xml"     },
 -- }
 
-local coq = require("coq");
+-- local coq = require("coq");
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+local function conf_setup_hook(conf)
+  -- return coq.lsp_ensure_capabilities(conf)
+  conf.capabilities = conf.capabilities or {}
+
+  for k,v in pairs(capabilities) do conf.capabilities[k] = v end
+
+  return conf
+end
+
+-- Set up nvim-cmp.
+local cmp = require('cmp')
+
+
+local has_words_before = function()
+  unpack = unpack or table.unpack
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local feedkey = function(key, mode)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
+
+cmp.setup({
+  snippet = {
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+    end,
+  },
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+      elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
+      end
+    end, { "i", "s" }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'path' },
+    { name = 'vsnip' }, -- For vsnip users.
+    -- { name = 'luasnip' }, -- For luasnip users.
+    -- { name = 'ultisnips' }, -- For ultisnips users.
+    -- { name = 'snippy' }, -- For snippy users.
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+-- Set configuration for specific filetype.
+-- cmp.setup.filetype('gitcommit', {
+--   sources = cmp.config.sources({
+--     { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+--   }, {
+--     { name = 'buffer' },
+--   })
+-- })
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+
+---------------------------------------- LSP CONF ----------------------------------------
+-- Set up lspconfig.
 local lspconf = require('lspconfig');
 
-lspconf.clangd.setup(coq.lsp_ensure_capabilities({
+lspconf.clangd.setup(conf_setup_hook({
   --     capabilities = capabilities,
   cmd = {
     "clangd",
@@ -232,7 +344,7 @@ lspconf.clangd.setup(coq.lsp_ensure_capabilities({
 -- require("clangd_extensions").setup {
 --         -- options to pass to nvim-lspconfig
 --         -- i.e. the arguments to require("lspconfig").clangd.setup({})
---     server = coq.lsp_ensure_capabilities({
+--     server = conf_setup_hook({
 --       on_attach = on_attach,
 --       flags = lsp_flags,
 --     }),
@@ -321,7 +433,7 @@ lspconf.clangd.setup(coq.lsp_ensure_capabilities({
 --     },
 -- }
 
--- lspconf.tsserver.setup(coq.lsp_ensure_capabilities({
+-- lspconf.tsserver.setup(conf_setup_hook({
 -- --     capabilities = capabilities,
 --   on_attach = on_attach,
 --   flags = lsp_flags,
@@ -333,20 +445,20 @@ require("typescript").setup({
   go_to_source_definition = {
       fallback = true, -- fall back to standard LSP definition on failure
   },
-  server = coq.lsp_ensure_capabilities({
+  server = conf_setup_hook({
     --     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
   }),  -- pass options to lspconfig's setup method
 })
 
-lspconf.volar.setup(coq.lsp_ensure_capabilities({
+lspconf.volar.setup(conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
 
--- lspconf.vuels.setup(coq.lsp_ensure_capabilities({
+-- lspconf.vuels.setup(conf_setup_hook({
 -- --     capabilities = capabilities,
 --   on_attach = on_attach,
 --   flags = lsp_flags,
@@ -355,20 +467,20 @@ lspconf.volar.setup(coq.lsp_ensure_capabilities({
 -- start mason
 -- require("mason").setup()
 
-lspconf.quick_lint_js.setup(coq.lsp_ensure_capabilities({
+lspconf.quick_lint_js.setup(conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
 
-lspconf.cmake.setup(coq.lsp_ensure_capabilities({
+lspconf.cmake.setup(conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
 
 lspconf.cssls.setup(
-  coq.lsp_ensure_capabilities({
+  conf_setup_hook({
   --     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
@@ -376,7 +488,7 @@ lspconf.cssls.setup(
 )
 
 lspconf.emmet_ls.setup(
-  coq.lsp_ensure_capabilities({
+  conf_setup_hook({
   --     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
@@ -393,7 +505,7 @@ local html_cap = vim.lsp.protocol.make_client_capabilities()
 html_cap.textDocument.completion.completionItem.snippetSupport = true
 
 lspconf.html.setup(
-  coq.lsp_ensure_capabilities({
+  conf_setup_hook({
     capabilities = html_cap,
     on_attach = on_attach,
     flags = lsp_flags,
@@ -405,14 +517,14 @@ lspconf.html.setup(
 )
 
 lspconf.svelte.setup(
-  coq.lsp_ensure_capabilities({
+  conf_setup_hook({
     on_attach = on_attach,
     flags = lsp_flags,
   })
 )
 
 lspconf.lua_ls.setup(
-  coq.lsp_ensure_capabilities({
+  conf_setup_hook({
     settings = {
       Lua = {
         runtime = {
@@ -446,14 +558,14 @@ lspconf.lua_ls.setup(
 -- Python lsp
 -- pacman -S python-lsp-server python-mccabe python-pycodestyle python-pydocstyle python-pyflakes python-pylint python-rope flake8 yapf python-whatthepatch python-pystemmer python-appdirs
 lspconf.pylsp.setup(
-  coq.lsp_ensure_capabilities({
+  conf_setup_hook({
     on_attach = on_attach,
     flags = lsp_flags,
   })
 )
 
 -- lspconf.java_language_server.setup(
---   coq.lsp_ensure_capabilities({
+--   conf_setup_hook({
 --     on_attach = on_attach,
 --     cmd = { "/home/neko-chan/repos/java-language-server/dist/launch_linux.sh" },
 --     flags = lsp_flags,
@@ -461,20 +573,20 @@ lspconf.pylsp.setup(
 -- )
 
 -- lspconf.phpactor.setup(
---   coq.lsp_ensure_capabilities({
+--   conf_setup_hook({
 --     on_attach = on_attach,
 --     flags = lsp_flags,
 --   })
 -- )
 
 -- crashes
--- lspconf.jdtls.setup(coq.lsp_ensure_capabilities({
+-- lspconf.jdtls.setup(conf_setup_hook({
 -- --     capabilities = capabilities,
 --   on_attach = on_attach,
 --   flags = lsp_flags,
 -- }))
 
-lspconf.tailwindcss.setup(coq.lsp_ensure_capabilities({
+lspconf.tailwindcss.setup(conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
