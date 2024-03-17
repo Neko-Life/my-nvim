@@ -110,6 +110,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 " Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+" quick math!
+Plug 'hrsh7th/cmp-calc'
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
