@@ -97,7 +97,7 @@ Plug 'puremourning/vimspector'
 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
--- requires `bc`
+" requires `bc`
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
 " completion using cmp
