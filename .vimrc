@@ -95,27 +95,28 @@ Plug 'puremourning/vimspector'
 " Plug 'LucHermitte/alternate-lite'
 " Plug 'LucHermitte/lh-cpp'
 
-" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+-- requires `bc`
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
 " completion using cmp
-Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/nvim-cmp'
 
 " cmp sources
 " https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
 " Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+" Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 " quick math!
-Plug 'hrsh7th/cmp-calc'
+" Plug 'hrsh7th/cmp-calc'
 
 " For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
 
 Plug 'wakatime/vim-wakatime'
 

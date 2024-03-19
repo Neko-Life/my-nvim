@@ -1,6 +1,6 @@
 -- ----- SETTINGS -----
 -- Autostart coq
--- vim.g.coq_settings = { auto_start = true }
+vim.g.coq_settings = { auto_start = true }
 
 -- enable git blame
 vim.g.blamer_enabled = 1
