@@ -199,12 +199,13 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   end,
 })
 
+-- disabled cuz slow on big files, run the command manually
 -- format files on save
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = '*.{jsx,ts,tsx}',
-  group = mygroup,
-  command = 'Neoformat',
-})
+-- vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+--   pattern = '*.{jsx,ts,tsx}',
+--   group = mygroup,
+--   command = 'Neoformat',
+-- })
 
 -- shiftwidth and tabstop configs
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
