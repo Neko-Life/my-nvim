@@ -124,7 +124,7 @@ vim.keymap.set('n', '<A-Down>', '<cmd>new<cr>', opts)
 vim.keymap.set('n', '<A-Left>', '<cmd>vne<cr>', opts)
 vim.keymap.set('n', '<A-Right>', '<cmd>vs<cr>', opts)
 vim.keymap.set('n', '<A-CR>', '<cmd>tab sp<cr>', opts)
-vim.keymap.set('n', '<A-Space>', '<cmd>tabnew<cr>', opts)
+vim.keymap.set('n', '<A-n>', '<cmd>tabnew<cr>', opts)
 
 -- Telescope
 local builtin = require('telescope.builtin')
@@ -167,6 +167,7 @@ vim.keymap.set('n', '<leader>th', '<cmd>e term://fish<cr>', opts) -- Terminal He
 vim.keymap.set('n', '<leader>ga', '<cmd>!git add %<cr>', opts) -- Git Add current file
 vim.keymap.set('n', '<leader>gc', ':!git commit -m \'\'<Left>', opts) -- Git Commit with message
 vim.keymap.set('n', '<leader>gp', '<cmd>!git push<cr>', opts) -- Git Push
+vim.keymap.set('n', '<leader>gs', '<cmd>!git status<cr>', opts) -- Git Status
 
 -- vimspector
 vim.keymap.set('n', '<leader><Space><Space>', '<Plug>VimspectorContinue', opts) -- Start or continue debugging
