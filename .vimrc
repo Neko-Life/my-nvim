@@ -288,9 +288,9 @@ if ! has('nvim')
 
   " Terminal
   " Terminal in new Tab
-  nn <leader>tt <cmd>tabe term://bash<cr>
+  nn <leader>tt <cmd>tab term<cr>
   " Terminal Here
-  nn <leader>th <cmd>e term://bash<cr>
+  nn <leader>th <cmd>term ++curwin<cr>
 
   " git, broken prompting
   " Git Add current file
