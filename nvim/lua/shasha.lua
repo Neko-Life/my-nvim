@@ -327,8 +327,8 @@ lspconf.clangd.setup(conf_setup_hook({
     "--malloc-trim",
     "--pch-storage=memory",
     "--limit-references=100",
-    "--limit-results=25",
-    "--rename-file-limit=4"
+    "--limit-results=25"--,
+    -- "--rename-file-limit=4"
   },
   on_attach = function(client, bufnr)
     -- enable clangd_extensions inlay_hints
