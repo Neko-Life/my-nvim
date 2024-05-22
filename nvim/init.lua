@@ -188,6 +188,11 @@ vim.keymap.set('n', '<leader><Space>fu', '<Plug>VimspectorUpFrame', opts) -- Fra
 vim.keymap.set('n', '<leader><Space>fd', '<Plug>VimspectorDownFrame', opts) -- Frame Down
 vim.keymap.set('n', '<leader><Space>sd', '<Plug>VimspectorDisassemble', opts) -- Show Disassemble
 
+-- dropbar
+vim.keymap.set('n', '<Space>b', function()
+  require('dropbar.api').pick()
+end, opts) -- Pick dropbar
+
 -- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('shasha_my_nvim', { clear = true })
 
