@@ -50,13 +50,16 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   " Plug 'williamboman/mason.nvim' " lsp installer and manager
 
   " Plug 'jparise/vim-graphql' " GraphQL syntax highlighting
-  Plug 'p00f/clangd_extensions.nvim' " clangd ls extension features
-  Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
+  " Plug 'p00f/clangd_extensions.nvim' " clangd ls extension features
+  " Plug 'jose-elias-alvarez/typescript.nvim' " tsserver ls extension features
 
   " syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-  Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
+  
+  " built-in in nvim 0.10.0
+  " Plug 'tpope/vim-commentary' " Comment a line `gcc`, comment visual `gc`
+
   " auto tags
   Plug 'windwp/nvim-ts-autotag'
 
@@ -64,7 +67,10 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   " Plug 'nvim-treesitter/nvim-treesitter-refactor'
   " Plug 'folke/twilight.nvim'
   " Plug 'theHamsta/nvim-treesitter-pairs'
-  Plug 'hiphish/rainbow-delimiters.nvim'
+
+  " colorful brackets
+  " Plug 'hiphish/rainbow-delimiters.nvim'
+
   " Plug 'nvim-treesitter/nvim-treesitter-context'
   " Plug 'nvim-treesitter/playground'
 
@@ -204,6 +210,8 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'kristijanhusak/vim-dadbod-ui'
   Plug 'kristijanhusak/vim-dadbod-completion'
 
+  " 
+  Plug 'Bekaboo/dropbar.nvim'
   " codestats lua, requires plenary.nvim
   " Plug 'liljaylj/codestats.nvim'
 

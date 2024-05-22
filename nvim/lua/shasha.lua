@@ -144,9 +144,9 @@ require('telescope').setup{
 
 -- Mappings ================
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+-- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts) -- C-W+d
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
@@ -332,8 +332,8 @@ lspconf.clangd.setup(conf_setup_hook({
   },
   on_attach = function(client, bufnr)
     -- enable clangd_extensions inlay_hints
-    require("clangd_extensions.inlay_hints").setup_autocmd()
-    require("clangd_extensions.inlay_hints").set_inlay_hints()
+    -- require("clangd_extensions.inlay_hints").setup_autocmd()
+    -- require("clangd_extensions.inlay_hints").set_inlay_hints()
 
     on_attach(client, bufnr);
   end,
@@ -436,24 +436,24 @@ lspconf.clangd.setup(conf_setup_hook({
 --     },
 -- }
 
--- lspconf.tsserver.setup(conf_setup_hook({
--- --     capabilities = capabilities,
---   on_attach = on_attach,
---   flags = lsp_flags,
--- }))
+lspconf.tsserver.setup(conf_setup_hook({
+--     capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}))
 
-require("typescript").setup({
-  disable_commands = false, -- prevent the plugin from creating Vim commands
-  debug = false, -- enable debug logging for commands
-  go_to_source_definition = {
-      fallback = true, -- fall back to standard LSP definition on failure
-  },
-  server = conf_setup_hook({
-    --     capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-  }),  -- pass options to lspconfig's setup method
-})
+-- require("typescript").setup({
+--   disable_commands = false, -- prevent the plugin from creating Vim commands
+--   debug = false, -- enable debug logging for commands
+--   go_to_source_definition = {
+--       fallback = true, -- fall back to standard LSP definition on failure
+--   },
+--   server = conf_setup_hook({
+--     --     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--   }),  -- pass options to lspconfig's setup method
+-- })
 
 lspconf.volar.setup(conf_setup_hook({
 --     capabilities = capabilities,
