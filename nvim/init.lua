@@ -193,6 +193,9 @@ vim.keymap.set('n', '<leader><Space>sd', '<Plug>VimspectorDisassemble', opts) --
 --   require('dropbar.api').pick()
 -- end, opts) -- Pick dropbar
 
+-- outline
+vim.keymap.set('n', '<Space>b', '<cmd>Outline<CR>', opts) -- Toggle Outline
+
 -- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('shasha_my_nvim', { clear = true })
 

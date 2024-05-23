@@ -212,6 +212,10 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
 
   " winbar nav
   " Plug 'Bekaboo/dropbar.nvim'
+
+  " outline symbols
+  Plug 'hedyhli/outline.nvim'
+
   " codestats lua, requires plenary.nvim
   " Plug 'liljaylj/codestats.nvim'
 
