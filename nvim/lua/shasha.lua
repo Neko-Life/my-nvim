@@ -98,13 +98,6 @@ local function nvim_tree_on_attach(bufnr)
 
 end
 
--- dropbar settings
-require('dropbar').setup({
-  menu = {
-    preview = false
-  }
-})
-
 -- setup with some options
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
