@@ -210,8 +210,8 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   Plug 'kristijanhusak/vim-dadbod-ui'
   Plug 'kristijanhusak/vim-dadbod-completion'
 
-  " 
-  Plug 'Bekaboo/dropbar.nvim'
+  " winbar nav
+  " Plug 'Bekaboo/dropbar.nvim'
   " codestats lua, requires plenary.nvim
   " Plug 'liljaylj/codestats.nvim'
 
