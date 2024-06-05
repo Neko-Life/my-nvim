@@ -669,9 +669,11 @@ require'nvim-treesitter.configs'.setup {
   --   enable = true
   -- },
   -- windwp/nvim-ts-autotag 
-  autotag = {
-    enable = true,
-  },
+  -- DEPRECATED! REMOVED IN 1.0.0
+  -- call setup instead like every other plugin
+  -- autotag = {
+  --   enable = true,
+  -- },
   -- nvim-treesitter/nvim-treesitter-refactor
   -- refactor = {
   --   highlight_definitions = {
@@ -1020,5 +1022,13 @@ require("outline").setup({
   },
   outline_items = {
     show_symbol_lineno = true,
+  },
+})
+
+require('nvim-ts-autotag').setup({
+  opts = {
+    enable_close = true, -- Auto close tags
+    enable_rename = true, -- Auto rename pairs of tags
+    enable_close_on_slash = true -- Auto close on trailing </
   },
 })
