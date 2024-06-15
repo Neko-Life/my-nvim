@@ -185,6 +185,8 @@ local lsp_flags = {
 -- https://github.com/ms-jpq/coq.thirdparty
 require("coq_3p") {
   { src = "bc", short_name = "MATH", precision = 6 },
+  { src = "vim_dadbod_completion", short_name = "DB"},
+  -- { src = "dap" }, -- nvim-dap
   -- { src = "builtin/ada"     },
   -- { src = "builtin/c"       },
   -- { src = "builtin/clojure" },
