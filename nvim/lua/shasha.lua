@@ -490,18 +490,18 @@ lspconf.cssls.setup(
   })
 )
 
-lspconf.emmet_ls.setup(
-  conf_setup_hook({
-  --     capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-    filetypes = {
-      -- react js
-      -- "javascript", "less", "eruby"
-      "html", "typescriptreact", "javascriptreact", "css", "sass", "scss",
-    },
-  })
-)
+-- lspconf.emmet_ls.setup(
+--   conf_setup_hook({
+--   --     capabilities = capabilities,
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     filetypes = {
+--       -- react js
+--       -- "javascript", "less", "eruby"
+--       "html", "typescriptreact", "javascriptreact", "css", "sass", "scss",
+--     },
+--   })
+-- )
 
 --Enable (broadcasting) snippet capability for completion
 local html_cap = vim.lsp.protocol.make_client_capabilities()

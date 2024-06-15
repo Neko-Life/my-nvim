@@ -216,6 +216,9 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   " outline symbols
   Plug 'hedyhli/outline.nvim'
 
+  " emmet.io
+  Plug 'mattn/emmet-vim'
+
   " codestats lua, requires plenary.nvim
   " Plug 'liljaylj/codestats.nvim'
 

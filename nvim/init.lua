@@ -40,6 +40,9 @@ vim.g.neoformat_try_node_exe = 1
 -- set no match parent
 vim.g.loaded_matchparen = 1
 
+-- emmet config
+vim.g.user_emmet_install_global = 0
+
 -- source .vimrc
 vim.cmd('so ~/.vimrc')
 
@@ -199,6 +202,11 @@ vim.keymap.set('n', '<Space>b', '<cmd>Outline<CR>', opts) -- Toggle Outline
 
 -- ----- AUTOCOMMANDS -----
 local mygroup = vim.api.nvim_create_augroup('shasha_my_nvim', { clear = true })
+
+-- emmet install
+vim.cmd([[
+au shasha_my_nvim FileType html,css EmmetInstall
+]])
 
 -- ejs syntax workaround
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
