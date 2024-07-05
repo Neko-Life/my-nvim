@@ -278,7 +278,7 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 require('shasha')
 
 -- sonarlint
-require('sonar-conf')
+-- require('sonar-conf')
 
 -- lua require('coc-config')
 

@@ -192,7 +192,7 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   " Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
   " sonarlint
-  Plug 'https://gitlab.com/schrieveslaach/sonarlint.nvim'
+  " Plug 'https://gitlab.com/schrieveslaach/sonarlint.nvim'
 
   " lorem ipsum
   Plug 'vim-scripts/loremipsum'
