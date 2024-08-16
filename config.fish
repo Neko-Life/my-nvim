@@ -1,5 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+
+    # load phpenv
+    source (phpenv init -|psub)
 end
 
 # Created by `pipx` on 2024-03-17 00:48:39
