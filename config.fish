@@ -1,4 +1,5 @@
 # phpenv
+# see tutorial: https://github.com/phpenv/phpenv
 set --export PATH "$HOME/.phpenv/bin" $PATH
 
 
