@@ -5,7 +5,7 @@ XTerm.vt100.saveLines: 65536
 
 
 ! ==================== FONT ====================
-XTerm.vt100.faceName: FiraCode Nerd Font Light:size=11:antialias=true
+XTerm.vt100.faceName: FiraMono Nerd Font:size=11:antialias=true
 !XTerm.vt100.font: 7x13
 
 ! ==================== COLORS ====================
