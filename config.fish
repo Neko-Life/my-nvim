@@ -1,13 +1,14 @@
 # phpenv
+# Building is still error (so this stuff isnt working at all)
 # see tutorial: https://github.com/phpenv/phpenv
-set --export PATH "$HOME/.phpenv/bin" $PATH
+# set --export PATH "$HOME/.phpenv/bin" $PATH
 
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
     # load phpenv
-    source (phpenv init -|psub)
+    # source (phpenv init -|psub)
 end
 
 
@@ -16,4 +17,8 @@ set PATH $PATH "$HOME/.local/bin"
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+set --export PATH "$BUN_INSTALL/bin" $PATH
+
+# composer bin
+
+set --export PATH "$HOME/.config/composer/vendor/bin" $PATH
