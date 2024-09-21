@@ -56,6 +56,7 @@ vim.opt.relativenumber = true
 -- vim.opt.cursorlineopt = 'screenline'
 vim.opt.scrolloff = 14
 vim.opt.sidescrolloff = 14
+vim.opt.synmaxcol = 600
 
 vim.opt.mouse = ''
 

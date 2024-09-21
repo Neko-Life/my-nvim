@@ -273,7 +273,7 @@ if ! has('nvim')
   " set shiftwidth=8
 
   let g:loaded_matchparen=1
-  set number relativenumber scrolloff=14 sidescrolloff=14 mouse= sw=2 nowrap et fillchars=vert:\|
+  set number relativenumber scrolloff=14 sidescrolloff=14 mouse= sw=2 nowrap et fillchars=vert:\| synmaxcol=600
   " vim.opt.cursorline = true
   " vim.opt.cursorlineopt = 'screenline'
 

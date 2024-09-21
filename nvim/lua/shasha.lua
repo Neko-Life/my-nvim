@@ -103,11 +103,6 @@ require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
     adaptive_size = true,
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
     relativenumber = true,
   },
   renderer = {
@@ -122,7 +117,11 @@ require("nvim-tree").setup({
 -- Telescope
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = {".git", "*-lock.json", ".cache", "*.lock"}
+    file_ignore_patterns = {".git", "*-lock.json", ".cache", "*.lock"},
+    preview = {
+      -- disable tree-sitter on preview
+      treesitter = false
+    }
   },
   pickers = {
     live_grep = {
@@ -634,19 +633,25 @@ require'nvim-treesitter.configs'.setup {
     -- `false` will disable the whole extension
     enable = true,
 
-  --   -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-  --   -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-  --   -- the name of the parser)
-  --   -- list of language that will be disabled
-  --   -- disable = { "c", "rust" },
-  --   -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-  --   disable = function(lang, buf)
-  --       local max_filesize = 100 * 1024 -- 100 KB
-  --       local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-  --       if ok and stats and stats.size > max_filesize then
-  --           return true
-  --       end
-  --   end,
+  -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+  -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+  -- the name of the parser)
+  -- list of language that will be disabled
+  -- disable = { "c", "rust" },
+  -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+  disable = function(lang, buf)
+      -- local max_filesize = 100 * 1024 -- 100 KB
+      -- local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+      -- if ok and stats and stats.size > max_filesize then
+      --     return true
+      -- end
+
+      -- disable in big file or long buffer lines
+      local line_count = vim.api.nvim_buf_line_count(buf)
+      local file_size = vim.api.nvim_buf_get_offset(buf, line_count)
+      return file_size > 1024 * 500                   -- >512kb
+        or file_size / line_count > vim.o.synmaxcol   -- line too long
+  end,
 
   --   -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
   --   -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -654,9 +659,9 @@ require'nvim-treesitter.configs'.setup {
   --   -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-  -- indent = {
-  --   enable = false
-  -- },
+  indent = {
+    enable = true
+  },
   -- incremental_selection = {
   --   enable = false,
   --   keymaps = {
