@@ -61,8 +61,8 @@ local function nvim_tree_on_attach(bufnr)
   vim.keymap.set('n', 'D',     api.fs.trash,                          opts('Trash'))
   vim.keymap.set('n', 'E',     api.tree.expand_all,                   opts('Expand All'))
   vim.keymap.set('n', 'e',     api.fs.rename_basename,                opts('Rename: Basename'))
-  vim.keymap.set('n', ']e',    api.node.navigate.diagnostics.next,    opts('Next Diagnostic'))
-  vim.keymap.set('n', '[e',    api.node.navigate.diagnostics.prev,    opts('Prev Diagnostic'))
+  -- vim.keymap.set('n', ']e',    api.node.navigate.diagnostics.next,    opts('Next Diagnostic')) -- use ]d
+  -- vim.keymap.set('n', '[e',    api.node.navigate.diagnostics.prev,    opts('Prev Diagnostic')) -- use [d
   vim.keymap.set('n', 'F',     api.live_filter.clear,                 opts('Clean Filter'))
   vim.keymap.set('n', 'f',     api.live_filter.start,                 opts('Filter'))
   vim.keymap.set('n', 'g?',    api.tree.toggle_help,                  opts('Help'))
