@@ -437,7 +437,7 @@ lspconf.clangd.setup(conf_setup_hook({
 --     },
 -- }
 
-lspconf.tsserver.setup(conf_setup_hook({
+lspconf.ts_ls.setup(conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
