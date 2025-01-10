@@ -1002,31 +1002,39 @@ require("presence"):setup({
 
 -- NvChad fork of colorizer, show css colors
 require("colorizer").setup {
-    filetypes = { "*" },
-    user_default_options = {
-      RGB = true, -- #RGB hex codes
-      RRGGBB = true, -- #RRGGBB hex codes
-      names = true, -- "Name" codes like Blue or blue
-      RRGGBBAA = true, -- #RRGGBBAA hex codes
-      AARRGGBB = true, -- 0xAARRGGBB hex codes
-      rgb_fn = true, -- CSS rgb() and rgba() functions
-      hsl_fn = true, -- CSS hsl() and hsla() functions
-      css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-      css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      -- Available modes for `mode`: foreground, background,  virtualtext
-      mode = "background", -- Set the display mode.
-      -- Available methods are false / true / "normal" / "lsp" / "both"
-      -- True is same as normal
-      tailwind = "both", -- Enable tailwind colors
-      -- parsers can contain values used in |user_default_options|
-      sass = { enable = true }, -- parsers = { "css" }, }, -- Enable sass colors
-      -- virtualtext = "■",
-      -- update color values even if buffer is not focused
-      -- example use: cmp_menu, cmp_docs
-      always_update = false
-    },
-    -- all the sub-options of filetypes apply to buftypes
-    -- buftypes = {},
+   filetypes = { "*" },
+   user_default_options = {
+     RGB = true, -- #RGB hex codes
+     RRGGBB = true, -- #RRGGBB hex codes
+     names = true, -- "Name" codes like Blue or blue
+     names_opts = { -- options for mutating/filtering names.
+       lowercase = true, -- name:lower(), highlight `blue` and `red`
+       camelcase = false, -- name, highlight `Blue` and `Red`
+       uppercase = true, -- name:upper(), highlight `BLUE` and `RED`
+       strip_digits = false, -- ignore names with digits,
+       -- highlight `blue` and `red`, but not `blue3` and `red4`
+     },
+     RRGGBBAA = true, -- #RRGGBBAA hex codes
+     AARRGGBB = true, -- 0xAARRGGBB hex codes
+     rgb_fn = true, -- CSS rgb() and rgba() functions
+     hsl_fn = true, -- CSS hsl() and hsla() functions
+     css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+     css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+     -- Available modes for `mode`: foreground, background,  virtualtext
+     mode = "background", -- Set the display mode.
+     -- Available methods are false / true / "normal" / "lsp" / "both"
+     -- True is same as normal
+     tailwind = "both", -- Enable tailwind colors
+     -- parsers can contain values used in |user_default_options|
+     sass = { enable = true, parsers = { }, }, -- Enable sass colors
+     -- virtualtext = "■",
+     -- update color values even if buffer is not focused
+     -- example use: cmp_menu, cmp_docs
+     always_update = false
+   },
+   -- all the sub-options of filetypes apply to buftypes
+   buftypes = {},
+   user_commands = false, -- Enable all or some usercommands
 }
 
 -- Outline
