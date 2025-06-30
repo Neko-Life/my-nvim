@@ -1055,3 +1055,31 @@ require('nvim-ts-autotag').setup({
     enable_close_on_slash = true -- Auto close on trailing </
   },
 })
+
+-- AI Avante
+-- need copilot
+require("copilot").setup({}) -- :Copilot auth
+
+require('avante_lib').load()
+local config = {
+  provider = "copilot",
+  windows = {
+    input = {
+      border = "rounded",
+      width = 60,
+      height = 10,
+    },
+    output = {
+      border = "rounded",
+      width = 60,
+      height = 20,
+    },
+    ask = {
+      floating = true,
+      border = "rounded",
+      start_insert = true
+    }
+  }
+}
+local avante = require('avante')
+avante.setup(config)
