@@ -1060,26 +1060,30 @@ require('nvim-ts-autotag').setup({
 -- need copilot
 require("copilot").setup({}) -- :Copilot auth
 
-require('avante_lib').load()
-local config = {
-  provider = "copilot",
-  windows = {
-    input = {
-      border = "rounded",
-      width = 60,
-      height = 10,
-    },
-    output = {
-      border = "rounded",
-      width = 60,
-      height = 20,
-    },
-    ask = {
-      floating = true,
-      border = "rounded",
-      start_insert = true
-    }
-  }
-}
-local avante = require('avante')
-avante.setup(config)
+require("CopilotChat").setup({
+  -- See Configuration section for options
+})
+
+-- require('avante_lib').load()
+-- local config = {
+--   provider = "copilot",
+--   windows = {
+--     input = {
+--       border = "rounded",
+--       width = 60,
+--       height = 10,
+--     },
+--     output = {
+--       border = "rounded",
+--       width = 60,
+--       height = 20,
+--     },
+--     ask = {
+--       floating = true,
+--       border = "rounded",
+--       start_insert = true
+--     }
+--   }
+-- }
+-- local avante = require('avante')
+-- avante.setup(config)

@@ -237,21 +237,52 @@ if ! empty(globpath(&rtp, 'autoload/plug.vim'))
   " Deps
   " Plug 'nvim-treesitter/nvim-treesitter'
   " Plug 'nvim-lua/plenary.nvim'
-  Plug 'MunifTanjim/nui.nvim'
-  Plug 'MeanderingProgrammer/render-markdown.nvim'
+  " Plug 'MunifTanjim/nui.nvim'
+  " Plug 'MeanderingProgrammer/render-markdown.nvim'
 
   " Optional deps
   " Plug 'hrsh7th/nvim-cmp'
   " Plug 'nvim-tree/nvim-web-devicons' "or Plug 'echasnovski/mini.icons'
-  Plug 'HakonHarnes/img-clip.nvim'
+  " Plug 'HakonHarnes/img-clip.nvim'
   Plug 'zbirenbaum/copilot.lua'
-  Plug 'stevearc/dressing.nvim' " for enhanced input UI
-  Plug 'folke/snacks.nvim' " for modern input UI
+  " Plug 'stevearc/dressing.nvim' " for enhanced input UI
+  " Plug 'folke/snacks.nvim' " for modern input UI
 
   " Yay, pass source=true if you want to build from source
-  Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+  " Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
+  " function! SetupAvante()
+  "         lua << EOF
+  "       	  require('avante_lib').load()
+  "       	  local config = {
+  "       		  windows = {
+  "       			  input = {
+  "       				  border = "rounded",
+  "       				  width = 60,
+  "       				  height = 10,
+  "       			  },
+  "       			  output = {
+  "       				  border = "rounded",
+  "       				  width = 60,
+  "       				  height = 20,
+  "       			  },
+  "       			  ask = {
+  "       				  floating = true,
+  "       				  border = "rounded",
+  "       				  start_insert = true
+  "       			  }
+  "       			  }
+  "       		  }
+  "       	  local avante = require('avante')
+  "       	  avante.setup(config)
+  "         EOF
+  " endfunction
 
+  " autocmd! User avante.nvim SetupAvante()
+
+  " Plug 'github/copilot.vim' -- or zbirenbaum/copilot.lua
+  " Plug 'nvim-lua/plenary.nvim'
+  Plug 'CopilotC-Nvim/CopilotChat.nvim'
 
   " Initialize plugin system
   " - Automatically executes `filetype plugin indent on` and `syntax enable`.
