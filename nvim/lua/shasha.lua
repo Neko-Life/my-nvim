@@ -310,14 +310,14 @@ end
 
 ---------------------------------------- LSP CONF ----------------------------------------
 -- Set up lspconfig.
-local lspconf = require('lspconfig');
+local lspconf = vim.lsp.config
 
-lspconf.clangd.setup(conf_setup_hook({
+lspconf('clangd', conf_setup_hook({
   --     capabilities = capabilities,
   cmd = {
     "clangd",
     "--background-index",
-    "-j=12",
+    "-j=8",
     "--clang-tidy",
     "--clang-tidy-checks=-*,bugprone-*,cert-*,clang-analyzer-*,concurrency-*,cppcoreguidelines-*,llvm-namespace-comment,modernize-*,performance-*,portability-*,readability-*,-bugprone-implicit-widening-of-multiplication-result,-bugprone-easily-swappable-parameters,-readability-identifier-length,-portability-restrict-system-includes,-modernize-use-trailing-return-type,-cppcoreguidelines-non-private-member-variables-in-classes,-readability-avoid-const-params-in-decls",
     "--all-scopes-completion",
@@ -327,8 +327,8 @@ lspconf.clangd.setup(conf_setup_hook({
     "--function-arg-placeholders=0",
     "--malloc-trim",
     "--pch-storage=memory",
-    "--limit-references=100",
-    "--limit-results=25"--,
+    "--limit-references=200",
+    "--limit-results=100"--,
     -- "--rename-file-limit=4"
   },
   on_attach = function(client, bufnr)
@@ -437,7 +437,7 @@ lspconf.clangd.setup(conf_setup_hook({
 --     },
 -- }
 
-lspconf.ts_ls.setup(conf_setup_hook({
+lspconf('ts_ls', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
@@ -456,7 +456,7 @@ lspconf.ts_ls.setup(conf_setup_hook({
 --   }),  -- pass options to lspconfig's setup method
 -- })
 
-lspconf.volar.setup(conf_setup_hook({
+lspconf('volar', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
@@ -471,19 +471,19 @@ lspconf.volar.setup(conf_setup_hook({
 -- start mason
 -- require("mason").setup()
 
-lspconf.quick_lint_js.setup(conf_setup_hook({
+lspconf('quick_lint_js', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
 
-lspconf.cmake.setup(conf_setup_hook({
+lspconf('cmake', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
 
-lspconf.cssls.setup(
+lspconf('cssls',
   conf_setup_hook({
   --     capabilities = capabilities,
     on_attach = on_attach,
@@ -508,7 +508,7 @@ lspconf.cssls.setup(
 local html_cap = vim.lsp.protocol.make_client_capabilities()
 html_cap.textDocument.completion.completionItem.snippetSupport = true
 
-lspconf.html.setup(
+lspconf('html',
   conf_setup_hook({
     capabilities = html_cap,
     on_attach = on_attach,
@@ -520,14 +520,14 @@ lspconf.html.setup(
   })
 )
 
-lspconf.svelte.setup(
+lspconf('svelte',
   conf_setup_hook({
     on_attach = on_attach,
     flags = lsp_flags,
   })
 )
 
-lspconf.lua_ls.setup(
+lspconf('lua_ls',
   conf_setup_hook({
     settings = {
       Lua = {
@@ -561,7 +561,7 @@ lspconf.lua_ls.setup(
 
 -- Python lsp
 -- pacman -S python-lsp-server python-mccabe python-pycodestyle python-pydocstyle python-pyflakes python-pylint python-rope flake8 yapf python-whatthepatch python-pystemmer python-appdirs
-lspconf.pylsp.setup(
+lspconf('pylsp',
   conf_setup_hook({
     on_attach = on_attach,
     flags = lsp_flags,
@@ -590,7 +590,7 @@ lspconf.pylsp.setup(
 --   flags = lsp_flags,
 -- }))
 
-lspconf.tailwindcss.setup(conf_setup_hook({
+lspconf('tailwindcss', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
