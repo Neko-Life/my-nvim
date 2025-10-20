@@ -310,9 +310,7 @@ end
 
 ---------------------------------------- LSP CONF ----------------------------------------
 -- Set up lspconfig.
-local lspconf = vim.lsp.config
-
-lspconf('clangd', conf_setup_hook({
+vim.lsp.config('clangd', conf_setup_hook({
   --     capabilities = capabilities,
   cmd = {
     "clangd",
@@ -437,7 +435,7 @@ lspconf('clangd', conf_setup_hook({
 --     },
 -- }
 
-lspconf('ts_ls', conf_setup_hook({
+vim.lsp.config('ts_ls', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
@@ -456,7 +454,7 @@ lspconf('ts_ls', conf_setup_hook({
 --   }),  -- pass options to lspconfig's setup method
 -- })
 
-lspconf('volar', conf_setup_hook({
+vim.lsp.config('vue_ls', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
@@ -471,19 +469,19 @@ lspconf('volar', conf_setup_hook({
 -- start mason
 -- require("mason").setup()
 
-lspconf('quick_lint_js', conf_setup_hook({
+vim.lsp.config('quick_lint_js', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
 
-lspconf('cmake', conf_setup_hook({
+vim.lsp.config('cmake', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }))
 
-lspconf('cssls',
+vim.lsp.config('cssls',
   conf_setup_hook({
   --     capabilities = capabilities,
     on_attach = on_attach,
@@ -508,7 +506,7 @@ lspconf('cssls',
 local html_cap = vim.lsp.protocol.make_client_capabilities()
 html_cap.textDocument.completion.completionItem.snippetSupport = true
 
-lspconf('html',
+vim.lsp.config('html',
   conf_setup_hook({
     capabilities = html_cap,
     on_attach = on_attach,
@@ -520,14 +518,14 @@ lspconf('html',
   })
 )
 
-lspconf('svelte',
+vim.lsp.config('svelte',
   conf_setup_hook({
     on_attach = on_attach,
     flags = lsp_flags,
   })
 )
 
-lspconf('lua_ls',
+vim.lsp.config('lua_ls',
   conf_setup_hook({
     settings = {
       Lua = {
@@ -561,7 +559,7 @@ lspconf('lua_ls',
 
 -- Python lsp
 -- pacman -S python-lsp-server python-mccabe python-pycodestyle python-pydocstyle python-pyflakes python-pylint python-rope flake8 yapf python-whatthepatch python-pystemmer python-appdirs
-lspconf('pylsp',
+vim.lsp.config('pylsp',
   conf_setup_hook({
     on_attach = on_attach,
     flags = lsp_flags,
@@ -590,7 +588,7 @@ lspconf('pylsp',
 --   flags = lsp_flags,
 -- }))
 
-lspconf('tailwindcss', conf_setup_hook({
+vim.lsp.config('tailwindcss', conf_setup_hook({
 --     capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
@@ -610,6 +608,8 @@ lspconf('tailwindcss', conf_setup_hook({
     }
   }
 }))
+
+vim.lsp.enable({'clangd','ts_ls','vue_ls','quick_lint_js','cmake','cssls','html','svelte','lua_ls','pylsp','tailwindcss'});
 
 -- nvim-treesitter
 require'nvim-treesitter.configs'.setup {
