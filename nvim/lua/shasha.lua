@@ -621,7 +621,7 @@ vim.lsp.config('intelephense',
 vim.lsp.enable({'clangd','ts_ls','vue_ls','quick_lint_js','cmake','cssls','html','svelte','lua_ls','pylsp','tailwindcss','intelephense'});
 
 -- nvim-treesitter
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter'.setup {
   -- A list of parser names, or "all"
   -- ensure_installed = { "c", "lua", "rust" },
 
