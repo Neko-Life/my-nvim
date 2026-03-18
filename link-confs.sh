@@ -15,3 +15,4 @@ ln -s "$(pwd)/.vimrc"		~/
 ln -s "$(pwd)/.tmux.conf"	~/
 # ln -s "$(pwd)/.Xresources"	~/
 
+# ln -s "$(pwd)/makepkg.conf"	WHERE??
