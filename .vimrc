@@ -367,4 +367,7 @@ if ! has('nvim')
   nn <leader>gp <cmd>!git push<cr>
   " Git Status
   nn <leader>gs <cmd>!git status<cr>
+
+  " === VIM ONLY CONFIG ===
+  " colorscheme catppuccin
 endif " if ! has('nvim')
