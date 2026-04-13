@@ -615,6 +615,7 @@ vim.lsp.config('intelephense',
   conf_setup_hook({
     on_attach = on_attach,
     flags = lsp_flags,
+    root_markers = { ".intelephense.root.ignore", "composer.json" }
   })
 )
 
